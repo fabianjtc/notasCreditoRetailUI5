@@ -1,0 +1,81 @@
+[{
+	"hbkid": "hbkid 1",
+	"hktid": "hktid 1",
+	"text1": "text1 1",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%201',hktid='hktid%201')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 2",
+	"hktid": "hktid 2",
+	"text1": "text1 2",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%202',hktid='hktid%202')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 3",
+	"hktid": "hktid 3",
+	"text1": "text1 3",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%203',hktid='hktid%203')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 4",
+	"hktid": "hktid 4",
+	"text1": "text1 4",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%204',hktid='hktid%204')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 5",
+	"hktid": "hktid 5",
+	"text1": "text1 5",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%205',hktid='hktid%205')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 6",
+	"hktid": "hktid 6",
+	"text1": "text1 6",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%206',hktid='hktid%206')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 7",
+	"hktid": "hktid 7",
+	"text1": "text1 7",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%207',hktid='hktid%207')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 8",
+	"hktid": "hktid 8",
+	"text1": "text1 8",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%208',hktid='hktid%208')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 9",
+	"hktid": "hktid 9",
+	"text1": "text1 9",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%209',hktid='hktid%209')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}, {
+	"hbkid": "hbkid 10",
+	"hktid": "hktid 10",
+	"text1": "text1 10",
+	"__metadata": {
+		"uri": "BancosSet(hbkid='hbkid%2010',hktid='hktid%2010')",
+		"type": "ZSNC002_SRV.Bancos"
+	}
+}]

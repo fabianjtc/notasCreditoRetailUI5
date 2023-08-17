@@ -1,0 +1,71 @@
+[{
+	"bukrs": "bukrs 1",
+	"butxt": "butxt 1",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%201')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 2",
+	"butxt": "butxt 2",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%202')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 3",
+	"butxt": "butxt 3",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%203')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 4",
+	"butxt": "butxt 4",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%204')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 5",
+	"butxt": "butxt 5",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%205')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 6",
+	"butxt": "butxt 6",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%206')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 7",
+	"butxt": "butxt 7",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%207')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 8",
+	"butxt": "butxt 8",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%208')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 9",
+	"butxt": "butxt 9",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%209')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}, {
+	"bukrs": "bukrs 10",
+	"butxt": "butxt 10",
+	"__metadata": {
+		"uri": "SociedadSet('bukrs%2010')",
+		"type": "ZSNC002_SRV.Sociedad"
+	}
+}]

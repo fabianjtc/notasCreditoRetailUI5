@@ -1,0 +1,211 @@
+[{
+	"bsik_key": "bsik_key 1",
+	"lifnr": "lifnr 1",
+	"bukrs": "bukrs 1",
+	"waers": "waers 1",
+	"name1": "name1 1",
+	"zterm": "zterm 1",
+	"zahls": "zahls 1",
+	"wrbtr": "wrbtr 1",
+	"dmbtr": "dmbtr 1",
+	"cantitems": "cantitems 1",
+	"proceso": "proceso 1",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%201')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%201')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 2",
+	"lifnr": "lifnr 2",
+	"bukrs": "bukrs 2",
+	"waers": "waers 2",
+	"name1": "name1 2",
+	"zterm": "zterm 2",
+	"zahls": "zahls 2",
+	"wrbtr": "wrbtr 2",
+	"dmbtr": "dmbtr 2",
+	"cantitems": "cantitems 2",
+	"proceso": "proceso 2",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%202')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%202')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 3",
+	"lifnr": "lifnr 3",
+	"bukrs": "bukrs 3",
+	"waers": "waers 3",
+	"name1": "name1 3",
+	"zterm": "zterm 3",
+	"zahls": "zahls 3",
+	"wrbtr": "wrbtr 3",
+	"dmbtr": "dmbtr 3",
+	"cantitems": "cantitems 3",
+	"proceso": "proceso 3",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%203')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%203')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 4",
+	"lifnr": "lifnr 4",
+	"bukrs": "bukrs 4",
+	"waers": "waers 4",
+	"name1": "name1 4",
+	"zterm": "zterm 4",
+	"zahls": "zahls 4",
+	"wrbtr": "wrbtr 4",
+	"dmbtr": "dmbtr 4",
+	"cantitems": "cantitems 4",
+	"proceso": "proceso 4",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%204')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%204')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 5",
+	"lifnr": "lifnr 5",
+	"bukrs": "bukrs 5",
+	"waers": "waers 5",
+	"name1": "name1 5",
+	"zterm": "zterm 5",
+	"zahls": "zahls 5",
+	"wrbtr": "wrbtr 5",
+	"dmbtr": "dmbtr 5",
+	"cantitems": "cantitems 5",
+	"proceso": "proceso 5",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%205')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%205')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 6",
+	"lifnr": "lifnr 6",
+	"bukrs": "bukrs 6",
+	"waers": "waers 6",
+	"name1": "name1 6",
+	"zterm": "zterm 6",
+	"zahls": "zahls 6",
+	"wrbtr": "wrbtr 6",
+	"dmbtr": "dmbtr 6",
+	"cantitems": "cantitems 6",
+	"proceso": "proceso 6",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%206')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%206')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 7",
+	"lifnr": "lifnr 7",
+	"bukrs": "bukrs 7",
+	"waers": "waers 7",
+	"name1": "name1 7",
+	"zterm": "zterm 7",
+	"zahls": "zahls 7",
+	"wrbtr": "wrbtr 7",
+	"dmbtr": "dmbtr 7",
+	"cantitems": "cantitems 7",
+	"proceso": "proceso 7",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%207')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%207')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 8",
+	"lifnr": "lifnr 8",
+	"bukrs": "bukrs 8",
+	"waers": "waers 8",
+	"name1": "name1 8",
+	"zterm": "zterm 8",
+	"zahls": "zahls 8",
+	"wrbtr": "wrbtr 8",
+	"dmbtr": "dmbtr 8",
+	"cantitems": "cantitems 8",
+	"proceso": "proceso 8",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%208')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%208')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 9",
+	"lifnr": "lifnr 9",
+	"bukrs": "bukrs 9",
+	"waers": "waers 9",
+	"name1": "name1 9",
+	"zterm": "zterm 9",
+	"zahls": "zahls 9",
+	"wrbtr": "wrbtr 9",
+	"dmbtr": "dmbtr 9",
+	"cantitems": "cantitems 9",
+	"proceso": "proceso 9",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%209')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%209')/ToPartidas"
+		}
+	}
+}, {
+	"bsik_key": "bsik_key 10",
+	"lifnr": "lifnr 10",
+	"bukrs": "bukrs 10",
+	"waers": "waers 10",
+	"name1": "name1 10",
+	"zterm": "zterm 10",
+	"zahls": "zahls 10",
+	"wrbtr": "wrbtr 10",
+	"dmbtr": "dmbtr 10",
+	"cantitems": "cantitems 10",
+	"proceso": "proceso 10",
+	"__metadata": {
+		"uri": "AcreedoresSet('bsik_key%2010')",
+		"type": "ZSNC002_SRV.Acreedores"
+	},
+	"ToPartidas": {
+		"__deferred": {
+			"uri": "AcreedoresSet('bsik_key%2010')/ToPartidas"
+		}
+	}
+}]

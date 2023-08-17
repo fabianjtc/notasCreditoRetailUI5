@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Textos"
+		class="sapUiPopupWithPadding"
+		items="{/TextCabSet}"
+		search="_sgtxtValueHelpSearch"
+		confirm="_sgtxtValueHelpClose"
+		cancel="_sgtxtValueHelpClose">
+		<StandardListItem
+			title="{codtext}"
+			description="{sgtxt}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,71 @@
+[{
+	"waers": "waers 1",
+	"ltext": "ltext 1",
+	"__metadata": {
+		"uri": "MonedaSet('waers%201')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 2",
+	"ltext": "ltext 2",
+	"__metadata": {
+		"uri": "MonedaSet('waers%202')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 3",
+	"ltext": "ltext 3",
+	"__metadata": {
+		"uri": "MonedaSet('waers%203')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 4",
+	"ltext": "ltext 4",
+	"__metadata": {
+		"uri": "MonedaSet('waers%204')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 5",
+	"ltext": "ltext 5",
+	"__metadata": {
+		"uri": "MonedaSet('waers%205')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 6",
+	"ltext": "ltext 6",
+	"__metadata": {
+		"uri": "MonedaSet('waers%206')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 7",
+	"ltext": "ltext 7",
+	"__metadata": {
+		"uri": "MonedaSet('waers%207')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 8",
+	"ltext": "ltext 8",
+	"__metadata": {
+		"uri": "MonedaSet('waers%208')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 9",
+	"ltext": "ltext 9",
+	"__metadata": {
+		"uri": "MonedaSet('waers%209')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}, {
+	"waers": "waers 10",
+	"ltext": "ltext 10",
+	"__metadata": {
+		"uri": "MonedaSet('waers%2010')",
+		"type": "ZSNC002_SRV.Moneda"
+	}
+}]

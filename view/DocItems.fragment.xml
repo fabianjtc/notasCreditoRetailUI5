@@ -1,0 +1,153 @@
+<core:FragmentDefinition 
+	controllerName="zfisncv2.controller.Detail" 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:table="sap.m.table">
+	<Table 
+		id="id_tableItems" 
+		items="{ItemsData>/Items}" 
+		mode="Delete"
+		delete="onItemsDelete"
+		updateFinished="onItemsUpdateFinished"
+		noDataText="Sin Datos">
+				
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>tabItemsTitle}" />
+				<ToolbarSpacer></ToolbarSpacer>
+				<Text text="{i18n>tabItemsTitle2}" />
+				<ObjectNumber 
+					number="{
+						parts:[{path:'controlModel>/wrbtrTotItems'},{path:'waers'}],
+						type: 'sap.ui.model.type.Currency',
+						formatOptions: {showMeasure: false}
+					}"
+					unit="{waers}" 
+					state="Warning" />
+				<ToolbarSpacer></ToolbarSpacer>
+				<Text text="{i18n>tabItemsTitle3}" />
+				<ObjectNumber 
+					number="{
+						parts:[{path:'controlModel>/wrbtrDif'},{path:'waers'}],
+						type: 'sap.ui.model.type.Currency',
+						formatOptions: {showMeasure: false}
+					}"
+					unit="{waers}" 
+					state="{= ${controlModel>/wrbtrDif} === 0 ? 'Success' : 'Error' }" />
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>buttonAddTxt}" press="onItemsAdd" icon="sap-icon://add" type="Accept"/>
+			</Toolbar>
+		</headerToolbar>
+			
+		<columns>
+			<Column visible="false"> <Text text="{i18n>buzeiTxt}"/> </Column>
+			<Column hAlign="Right"> <Text text="{i18n>wrbtrTxt}"/> </Column>
+			<Column> <Text text="{i18n>hkontTxt}"/> </Column>
+			<Column> <Text text="{i18n>mwskzTxt}"/> </Column>
+			<!--<Column> <Text text="{i18n>kostlTxt}"/> </Column>-->
+			<!--<Column> <Text text="{i18n>aufnrTxt}"/> </Column>-->
+			<!--<Column> <Text text="{i18n>prctrTxt}"/> </Column>-->
+			<Column> <Text text="{i18n>taxAmountText}"/> </Column>
+			<!--<Column> <Text text="{i18n>zuonrTxt}"/> </Column>-->
+			<!--<Column> <Text text="{i18n>sgtxtTxt}"/> </Column>-->
+		</columns>
+			
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{ItemsData>buzei}"/>
+					
+					<Input value="{
+						parts: [{path: 'ItemsData>dmbtr'},{path: 'HeaderData>/waers'}],
+						type: 'sap.ui.model.type.Currency',
+						formatOptions: {showMeasure: false, emptyString: 0},
+						constraints: {minimum: 0}
+						}"
+						submit="onAmountItemChange"/>
+
+					<Input
+						id="id_hkont"
+						type="Text"
+						value="{ItemsData>hkont}"
+						placeholder="Cuenta..."
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpOnly="true"
+						valueHelpRequest="segmentValueHelp"
+						suggestionItems="{path: '/SaknrSet', templateShareable:false}" >
+						<suggestionItems>
+							<core:Item text="{hkont}" />
+						</suggestionItems>
+					</Input>
+					
+					<ComboBox
+						id="id_mwskz"
+						value="{ItemsData>mwskz}"
+						showSecondaryValues="true"
+						items="{
+							path: '/IndImpSet', templateShareable: false,
+							sorter: { path: 'mwskz' }
+						}" >
+						<core:ListItem key="{mwskz}" text="{mwskz}" additionalText="{text1}" />
+					</ComboBox>
+					
+					<!--<Input-->
+					<!--	id="id_kostl"-->
+					<!--	type="Text"-->
+					<!--	value="{ItemsData>kostl}"-->
+					<!--	placeholder="CeCo...."-->
+					<!--	showSuggestion="true"-->
+					<!--	showValueHelp="true"-->
+					<!--	valueHelpRequest="kostlValueHelp"-->
+					<!--	suggestionItems="{path: '/CeCoSet', templateShareable:false}" >-->
+					<!--	<suggestionItems>-->
+					<!--		<core:Item text="{kostl}" />-->
+					<!--	</suggestionItems>-->
+					<!--</Input>					-->
+					
+					<!--<Input-->
+					<!--	id="id_aufnr"-->
+					<!--	type="Text"-->
+					<!--	value="{ItemsData>aufnr}"-->
+					<!--	placeholder="Orden...."-->
+					<!--	showSuggestion="true"-->
+					<!--	showValueHelp="true"-->
+					<!--	valueHelpRequest="aufnrValueHelp"-->
+					<!--	suggestionItems="{path: '/AufnrSet', templateShareable:false}" >-->
+					<!--	<suggestionItems>-->
+					<!--		<core:Item text="{aufnr}" />-->
+					<!--	</suggestionItems>-->
+					<!--</Input>-->
+
+<!--					<Input
+						id="id_prctr"
+						type="Text"
+						value="{ItemsData>prctr}"
+						placeholder="CeBe...."
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpRequest="prctrValueHelp"
+						suggestionItems="{path: '/CeBeSet', templateShareable:false}" >
+						<suggestionItems>
+							<core:Item text="{prctr}" />
+						</suggestionItems>
+					</Input>-->
+
+					<Input id="id_taxamount" 
+						value="{
+							parts: [{path: 'ItemsData>taxAmount'},{path: 'HeaderData>/waers'}],
+							type: 'sap.ui.model.type.Currency',
+							formatOptions: {showMeasure: false, emptyString: 0},
+							constraints: {minimum: 0}
+						}"
+						showValueHelp="true" 
+						valueHelpOnly="true"
+						valueHelpRequest="onCalculateTax"/>
+					<!--<Input value="{ItemsData>zuonr}" maxLength="18"/>-->
+					<!--<Input value="{ItemsData>sgtxt}" maxLength="50"/>-->
+				</cells>
+			</ColumnListItem>
+		</items>
+			
+	</Table>
+</core:FragmentDefinition>

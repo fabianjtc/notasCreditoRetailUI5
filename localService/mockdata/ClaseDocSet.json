@@ -1,0 +1,71 @@
+[{
+	"blart": "blart 1",
+	"ltext": "ltext 1",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%201')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 2",
+	"ltext": "ltext 2",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%202')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 3",
+	"ltext": "ltext 3",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%203')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 4",
+	"ltext": "ltext 4",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%204')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 5",
+	"ltext": "ltext 5",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%205')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 6",
+	"ltext": "ltext 6",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%206')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 7",
+	"ltext": "ltext 7",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%207')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 8",
+	"ltext": "ltext 8",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%208')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 9",
+	"ltext": "ltext 9",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%209')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}, {
+	"blart": "blart 10",
+	"ltext": "ltext 10",
+	"__metadata": {
+		"uri": "ClaseDocSet('blart%2010')",
+		"type": "ZSNC002_SRV.ClaseDoc"
+	}
+}]

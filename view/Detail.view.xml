@@ -1,0 +1,71 @@
+<mvc:View
+	controllerName="zfisncv2.controller.Detail"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:l="sap.ui.layout"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+
+	<semantic:DetailPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="{device>/system/phone}"
+		title="{i18n>detailTitle}"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader
+				id="objectHeader"
+				condensed="true"
+				title="{name1} ({bukrs})"
+				number="{
+					parts: [{path: 'dmbtr'}, {path: 'waers'}],
+					type: 'sap.ui.model.type.Currency',
+					formatOptions: {showMeasure: false}
+				}"
+				numberUnit="{waers}">
+			</ObjectHeader>
+			
+			<core:Fragment fragmentName="zfisncv2.view.Partidas" type="XML"/>
+			
+			<l:Grid 
+				id="id_gridlog"
+				visible="false"
+				class="sapUiSmallMargin"
+				defaultSpan="L12 M12 S12">
+				<l:content>
+					<core:Fragment fragmentName="zfisncv2.view.DocLogistic" type="XML"/>
+				</l:content>
+			</l:Grid>
+			
+			<l:Grid 
+				id="id_griddoc"
+				visible="false"
+				class="sapUiSmallMargin"
+				defaultSpan="L12 M12 S12">
+				<l:content>
+					<core:Fragment fragmentName="zfisncv2.view.DocHeader" type="XML"/>
+					<core:Fragment fragmentName="zfisncv2.view.DocVendor" type="XML"/>
+					<core:Fragment fragmentName="zfisncv2.view.DocItems" type="XML"/>
+				</l:content>
+			</l:Grid>
+			
+		</semantic:content>
+
+		<semantic:customFooterContent>
+			<Button id="id_btnlog" icon="sap-icon://work-history" text="{i18n>btnLogTxt}" press="onBtnLog" type="Emphasized" enabled="true" />
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button id="id_btndl" text="{i18n>detLogistTxt}" press="onBtnDl" type="Unstyled" enabled="false" />
+			<Button id="id_btnfc" text="{i18n>generarFcTxt}" press="onBtnFc" type="Emphasized" enabled="false" />
+			<Button id="id_btnnc" text="{i18n>generarNcTxt}" press="onBtnNc" type="Accept" enabled="false" />
+			<Button id="id_btnsn" text="{i18n>anularSncTxt}" press="onBtnAnular" type="Reject" enabled="false" />
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button id="id_btnco" text="{i18n>contabilizarNcTxt}" press="onBtnContab" type="Default" enabled="{= ${controlModel>/wrbtrDif} === 0 &amp;&amp; 
+							${controlModel>/wrbtrTotItems} > 0 &amp;&amp; ${controlModel>/cantSele} > 0	? true : false }" />
+		</semantic:customFooterContent>
+		
+	</semantic:DetailPage>
+
+</mvc:View>

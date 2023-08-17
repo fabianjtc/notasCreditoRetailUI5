@@ -1,0 +1,71 @@
+[{
+	"codtext": "codtext 1",
+	"sgtxt": "sgtxt 1",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%201')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 2",
+	"sgtxt": "sgtxt 2",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%202')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 3",
+	"sgtxt": "sgtxt 3",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%203')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 4",
+	"sgtxt": "sgtxt 4",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%204')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 5",
+	"sgtxt": "sgtxt 5",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%205')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 6",
+	"sgtxt": "sgtxt 6",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%206')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 7",
+	"sgtxt": "sgtxt 7",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%207')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 8",
+	"sgtxt": "sgtxt 8",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%208')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 9",
+	"sgtxt": "sgtxt 9",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%209')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}, {
+	"codtext": "codtext 10",
+	"sgtxt": "sgtxt 10",
+	"__metadata": {
+		"uri": "TextCabSet('codtext%2010')",
+		"type": "ZSNC002_SRV.TextCab"
+	}
+}]

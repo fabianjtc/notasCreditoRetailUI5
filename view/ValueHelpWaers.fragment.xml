@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Selecciona la Moneda"
+		class="sapUiPopupWithPadding"
+		items="{/MonedaSet}"
+		search="_waersValueHelpSearch"
+		confirm="_waersValueHelpClose"
+		cancel="_waersValueHelpClose">
+		<StandardListItem
+			title="{waers}"
+			description="{ltext}" />
+	</SelectDialog>
+</core:FragmentDefinition>

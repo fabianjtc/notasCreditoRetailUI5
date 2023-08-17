@@ -1,0 +1,50 @@
+<core:FragmentDefinition controllerName="zfisncv2.controller.Detail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm id="id_formVendor" editable="true" layout="ResponsiveGridLayout" columnsL="2" columnsM="2" columnsXL="2">
+		<f:content>
+			<core:Title text="Datos del Proveedor"/>
+			<Label text="{i18n>wrbtrTxt}"/>
+			<Input
+				value="{ parts: [{path: 'VendorData>/wrbtr'},{path: 'HeaderData>/waers'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false, emptyString: 0}, constraints: {minimum: 0} }"
+				description="{HeaderData>/waers}" required="true" submit="onVendorAmountChange"/>
+			<Label text="{i18n>zfbdtTxt}"/>
+			<DatePicker value="{VendorData>/zfbdt}" valueFormat="yyyyMMdd" width="70%"/>
+			<Label text="{i18n>ztermTxt}"/>
+			<ComboBox id= "id_izterm" value="{VendorData>/zterm}" required="true" width="50%" showSecondaryValues="true"
+				items="{ path: '/ZtermSet', templateShareable:false, sorter: { path: 'zterm' } }">
+				<core:ListItem key="{zterm}" text="{zterm}" additionalText="{text1}"/>
+			</ComboBox>
+			<Label text="{i18n>zlsprTxt}"/>
+			<ComboBox value="{VendorData>/zlspr}" width="50%" showSecondaryValues="true"
+				items="{ path: '/ZlsprSet', templateShareable:false, sorter: { path: 'zahls' } }">
+				<core:ListItem key="{zahls}" text="{zahls}" additionalText="{textl}"/>
+			</ComboBox>
+			<Label text="{i18n>zlschTxt}"/>
+			<ComboBox id="id_izwels" value="{VendorData>/zlsch}" width="50%" showSecondaryValues="true"
+				items="{ path: '/ViasDePagoSet', templateShareable:false, sorter: { path: 'zlsch' } }">
+				<core:ListItem key="{zlsch}" text="{zlsch}" additionalText="{text1}"/>
+			</ComboBox>
+			<core:Title text=""/>
+			<Label text="{i18n>zuonrTxt}"/>
+			<Input value="{VendorData>/zuonr}" maxLength="18" width="60%"/>
+			<Label text="{i18n>hbkidTxt}"/>
+			<Input id="id_ihbkid" type="Text" value="{VendorData>/hbkid}" showValueHelp="true" 
+					valueHelpOnly="false" valueHelpRequest="hbkidValueHelp" maxLength="50"/>
+<!--			<ComboBox id="id_ihbkid" value="{VendorData>/hbkid}" width="50%" change="onChangeHbkid" showSecondaryValues="true"
+				items="{ path: '/BancosSet', templateShareable:false, sorter: { path: 'hbkid' } }">
+				<core:ListItem key="{hbkid}" text="{hbkid}" additionalText="{text1}"/>
+			</ComboBox>-->
+			<Label text="{i18n>hktidTxt}"/>
+			<Input id="id_ihktid" type="Text" value="{VendorData>/hktid}" showValueHelp="true" 
+					valueHelpOnly="false" valueHelpRequest="hktidValueHelp" maxLength="50"/>
+<!--			<ComboBox id="id_ihktid" value="{VendorData>/hktid}" width="50%" change="onChangeHktid" showSecondaryValues="true"
+				items="{ path: '/BancosSet', templateShareable:false, sorter: { path: 'hktid' } }">
+				<core:ListItem key="{hktid}" text="{hktid}" additionalText="{text1}"/>
+			</ComboBox>-->
+			<Label text="{i18n>sgtxtTxt}"/>
+			<!--<Input id="id_prov_sgtxt" type="Text" value="{VendorData>/sgtxt}" required="true"  showValueHelp="true" 
+			valueHelpOnly="true" valueHelpRequest="sgtxtValueHelp" maxLength="50"/>-->
+			<Input id="id_prov_sgtxt" type="Text" value="{VendorData>/sgtxt}" maxLength="50"/>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

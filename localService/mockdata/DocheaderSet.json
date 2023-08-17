@@ -1,0 +1,241 @@
+[{
+	"bukrs": "bukrs 1",
+	"belnr": "belnr 1",
+	"gjahr": "gjahr 1",
+	"budat": "budat 1",
+	"bldat": "bldat 1",
+	"monat": "monat 1",
+	"blart": "blart 1",
+	"waers": "waers 1",
+	"xblnr": "xblnr 1",
+	"bktxt": "bktxt 1",
+	"kursf": "kursf 1",
+	"wwert": "wwert 1",
+	"name1": "name1 1",
+	"proceso": "proceso 1",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%201',belnr='belnr%201',gjahr='gjahr%201')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%201',belnr='belnr%201',gjahr='gjahr%201')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 2",
+	"belnr": "belnr 2",
+	"gjahr": "gjahr 2",
+	"budat": "budat 2",
+	"bldat": "bldat 2",
+	"monat": "monat 2",
+	"blart": "blart 2",
+	"waers": "waers 2",
+	"xblnr": "xblnr 2",
+	"bktxt": "bktxt 2",
+	"kursf": "kursf 2",
+	"wwert": "wwert 2",
+	"name1": "name1 2",
+	"proceso": "proceso 2",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%202',belnr='belnr%202',gjahr='gjahr%202')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%202',belnr='belnr%202',gjahr='gjahr%202')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 3",
+	"belnr": "belnr 3",
+	"gjahr": "gjahr 3",
+	"budat": "budat 3",
+	"bldat": "bldat 3",
+	"monat": "monat 3",
+	"blart": "blart 3",
+	"waers": "waers 3",
+	"xblnr": "xblnr 3",
+	"bktxt": "bktxt 3",
+	"kursf": "kursf 3",
+	"wwert": "wwert 3",
+	"name1": "name1 3",
+	"proceso": "proceso 3",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%203',belnr='belnr%203',gjahr='gjahr%203')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%203',belnr='belnr%203',gjahr='gjahr%203')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 4",
+	"belnr": "belnr 4",
+	"gjahr": "gjahr 4",
+	"budat": "budat 4",
+	"bldat": "bldat 4",
+	"monat": "monat 4",
+	"blart": "blart 4",
+	"waers": "waers 4",
+	"xblnr": "xblnr 4",
+	"bktxt": "bktxt 4",
+	"kursf": "kursf 4",
+	"wwert": "wwert 4",
+	"name1": "name1 4",
+	"proceso": "proceso 4",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%204',belnr='belnr%204',gjahr='gjahr%204')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%204',belnr='belnr%204',gjahr='gjahr%204')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 5",
+	"belnr": "belnr 5",
+	"gjahr": "gjahr 5",
+	"budat": "budat 5",
+	"bldat": "bldat 5",
+	"monat": "monat 5",
+	"blart": "blart 5",
+	"waers": "waers 5",
+	"xblnr": "xblnr 5",
+	"bktxt": "bktxt 5",
+	"kursf": "kursf 5",
+	"wwert": "wwert 5",
+	"name1": "name1 5",
+	"proceso": "proceso 5",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%205',belnr='belnr%205',gjahr='gjahr%205')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%205',belnr='belnr%205',gjahr='gjahr%205')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 6",
+	"belnr": "belnr 6",
+	"gjahr": "gjahr 6",
+	"budat": "budat 6",
+	"bldat": "bldat 6",
+	"monat": "monat 6",
+	"blart": "blart 6",
+	"waers": "waers 6",
+	"xblnr": "xblnr 6",
+	"bktxt": "bktxt 6",
+	"kursf": "kursf 6",
+	"wwert": "wwert 6",
+	"name1": "name1 6",
+	"proceso": "proceso 6",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%206',belnr='belnr%206',gjahr='gjahr%206')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%206',belnr='belnr%206',gjahr='gjahr%206')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 7",
+	"belnr": "belnr 7",
+	"gjahr": "gjahr 7",
+	"budat": "budat 7",
+	"bldat": "bldat 7",
+	"monat": "monat 7",
+	"blart": "blart 7",
+	"waers": "waers 7",
+	"xblnr": "xblnr 7",
+	"bktxt": "bktxt 7",
+	"kursf": "kursf 7",
+	"wwert": "wwert 7",
+	"name1": "name1 7",
+	"proceso": "proceso 7",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%207',belnr='belnr%207',gjahr='gjahr%207')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%207',belnr='belnr%207',gjahr='gjahr%207')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 8",
+	"belnr": "belnr 8",
+	"gjahr": "gjahr 8",
+	"budat": "budat 8",
+	"bldat": "bldat 8",
+	"monat": "monat 8",
+	"blart": "blart 8",
+	"waers": "waers 8",
+	"xblnr": "xblnr 8",
+	"bktxt": "bktxt 8",
+	"kursf": "kursf 8",
+	"wwert": "wwert 8",
+	"name1": "name1 8",
+	"proceso": "proceso 8",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%208',belnr='belnr%208',gjahr='gjahr%208')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%208',belnr='belnr%208',gjahr='gjahr%208')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 9",
+	"belnr": "belnr 9",
+	"gjahr": "gjahr 9",
+	"budat": "budat 9",
+	"bldat": "bldat 9",
+	"monat": "monat 9",
+	"blart": "blart 9",
+	"waers": "waers 9",
+	"xblnr": "xblnr 9",
+	"bktxt": "bktxt 9",
+	"kursf": "kursf 9",
+	"wwert": "wwert 9",
+	"name1": "name1 9",
+	"proceso": "proceso 9",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%209',belnr='belnr%209',gjahr='gjahr%209')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%209',belnr='belnr%209',gjahr='gjahr%209')/ToDocitems"
+		}
+	}
+}, {
+	"bukrs": "bukrs 10",
+	"belnr": "belnr 10",
+	"gjahr": "gjahr 10",
+	"budat": "budat 10",
+	"bldat": "bldat 10",
+	"monat": "monat 10",
+	"blart": "blart 10",
+	"waers": "waers 10",
+	"xblnr": "xblnr 10",
+	"bktxt": "bktxt 10",
+	"kursf": "kursf 10",
+	"wwert": "wwert 10",
+	"name1": "name1 10",
+	"proceso": "proceso 10",
+	"__metadata": {
+		"uri": "DocheaderSet(bukrs='bukrs%2010',belnr='belnr%2010',gjahr='gjahr%2010')",
+		"type": "ZSNC002_SRV.Docheader"
+	},
+	"ToDocitems": {
+		"__deferred": {
+			"uri": "DocheaderSet(bukrs='bukrs%2010',belnr='belnr%2010',gjahr='gjahr%2010')/ToDocitems"
+		}
+	}
+}]

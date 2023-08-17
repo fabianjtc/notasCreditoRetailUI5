@@ -1,0 +1,71 @@
+[{
+	"prctr": "prctr 1",
+	"ktext": "ktext 1",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%201')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 2",
+	"ktext": "ktext 2",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%202')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 3",
+	"ktext": "ktext 3",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%203')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 4",
+	"ktext": "ktext 4",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%204')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 5",
+	"ktext": "ktext 5",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%205')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 6",
+	"ktext": "ktext 6",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%206')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 7",
+	"ktext": "ktext 7",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%207')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 8",
+	"ktext": "ktext 8",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%208')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 9",
+	"ktext": "ktext 9",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%209')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}, {
+	"prctr": "prctr 10",
+	"ktext": "ktext 10",
+	"__metadata": {
+		"uri": "CeBeSet('prctr%2010')",
+		"type": "ZSNC002_SRV.CeBe"
+	}
+}]

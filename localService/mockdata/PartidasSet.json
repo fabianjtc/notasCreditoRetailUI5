@@ -1,0 +1,201 @@
+[{
+	"bsik_key": "bsik_key 1",
+	"lifnr": "lifnr 1",
+	"belnr": "belnr 1",
+	"gjahr": "gjahr 1",
+	"buzei": "buzei 1",
+	"bukrs": "bukrs 1",
+	"blart": "blart 1",
+	"budat": "budat 1",
+	"bldat": "bldat 1",
+	"wrbtr": 300.46,
+	"dmbtr": 2882.82,
+	"waers": "waers 1",
+	"waers2": "waers2 1",
+	"mwskz": "mwskz 1",
+	"sgtxt": "sgtxt 1",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%201',lifnr='lifnr%201',belnr='belnr%201',gjahr='gjahr%201',buzei='buzei%201')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 2",
+	"lifnr": "lifnr 2",
+	"belnr": "belnr 2",
+	"gjahr": "gjahr 2",
+	"buzei": "buzei 2",
+	"bukrs": "bukrs 2",
+	"blart": "blart 2",
+	"budat": "budat 2",
+	"bldat": "bldat 2",
+	"wrbtr": 9107.17,
+	"dmbtr": 5751.74,
+	"waers": "waers 2",
+	"waers2": "waers2 2",
+	"mwskz": "mwskz 2",
+	"sgtxt": "sgtxt 2",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%202',lifnr='lifnr%202',belnr='belnr%202',gjahr='gjahr%202',buzei='buzei%202')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 3",
+	"lifnr": "lifnr 3",
+	"belnr": "belnr 3",
+	"gjahr": "gjahr 3",
+	"buzei": "buzei 3",
+	"bukrs": "bukrs 3",
+	"blart": "blart 3",
+	"budat": "budat 3",
+	"bldat": "bldat 3",
+	"wrbtr": 4621.65,
+	"dmbtr": 2477.09,
+	"waers": "waers 3",
+	"waers2": "waers2 3",
+	"mwskz": "mwskz 3",
+	"sgtxt": "sgtxt 3",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%203',lifnr='lifnr%203',belnr='belnr%203',gjahr='gjahr%203',buzei='buzei%203')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 4",
+	"lifnr": "lifnr 4",
+	"belnr": "belnr 4",
+	"gjahr": "gjahr 4",
+	"buzei": "buzei 4",
+	"bukrs": "bukrs 4",
+	"blart": "blart 4",
+	"budat": "budat 4",
+	"bldat": "bldat 4",
+	"wrbtr": 2071.64,
+	"dmbtr": 9301.51,
+	"waers": "waers 4",
+	"waers2": "waers2 4",
+	"mwskz": "mwskz 4",
+	"sgtxt": "sgtxt 4",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%204',lifnr='lifnr%204',belnr='belnr%204',gjahr='gjahr%204',buzei='buzei%204')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 5",
+	"lifnr": "lifnr 5",
+	"belnr": "belnr 5",
+	"gjahr": "gjahr 5",
+	"buzei": "buzei 5",
+	"bukrs": "bukrs 5",
+	"blart": "blart 5",
+	"budat": "budat 5",
+	"bldat": "bldat 5",
+	"wrbtr": 7560.86,
+	"dmbtr": 4875.62,
+	"waers": "waers 5",
+	"waers2": "waers2 5",
+	"mwskz": "mwskz 5",
+	"sgtxt": "sgtxt 5",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%205',lifnr='lifnr%205',belnr='belnr%205',gjahr='gjahr%205',buzei='buzei%205')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 6",
+	"lifnr": "lifnr 6",
+	"belnr": "belnr 6",
+	"gjahr": "gjahr 6",
+	"buzei": "buzei 6",
+	"bukrs": "bukrs 6",
+	"blart": "blart 6",
+	"budat": "budat 6",
+	"bldat": "bldat 6",
+	"wrbtr": 9741.51,
+	"dmbtr": 2211.9,
+	"waers": "waers 6",
+	"waers2": "waers2 6",
+	"mwskz": "mwskz 6",
+	"sgtxt": "sgtxt 6",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%206',lifnr='lifnr%206',belnr='belnr%206',gjahr='gjahr%206',buzei='buzei%206')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 7",
+	"lifnr": "lifnr 7",
+	"belnr": "belnr 7",
+	"gjahr": "gjahr 7",
+	"buzei": "buzei 7",
+	"bukrs": "bukrs 7",
+	"blart": "blart 7",
+	"budat": "budat 7",
+	"bldat": "bldat 7",
+	"wrbtr": 9415.71,
+	"dmbtr": 5943.84,
+	"waers": "waers 7",
+	"waers2": "waers2 7",
+	"mwskz": "mwskz 7",
+	"sgtxt": "sgtxt 7",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%207',lifnr='lifnr%207',belnr='belnr%207',gjahr='gjahr%207',buzei='buzei%207')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 8",
+	"lifnr": "lifnr 8",
+	"belnr": "belnr 8",
+	"gjahr": "gjahr 8",
+	"buzei": "buzei 8",
+	"bukrs": "bukrs 8",
+	"blart": "blart 8",
+	"budat": "budat 8",
+	"bldat": "bldat 8",
+	"wrbtr": 5679.5,
+	"dmbtr": 6447.86,
+	"waers": "waers 8",
+	"waers2": "waers2 8",
+	"mwskz": "mwskz 8",
+	"sgtxt": "sgtxt 8",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%208',lifnr='lifnr%208',belnr='belnr%208',gjahr='gjahr%208',buzei='buzei%208')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 9",
+	"lifnr": "lifnr 9",
+	"belnr": "belnr 9",
+	"gjahr": "gjahr 9",
+	"buzei": "buzei 9",
+	"bukrs": "bukrs 9",
+	"blart": "blart 9",
+	"budat": "budat 9",
+	"bldat": "bldat 9",
+	"wrbtr": 3890.88,
+	"dmbtr": 7887.09,
+	"waers": "waers 9",
+	"waers2": "waers2 9",
+	"mwskz": "mwskz 9",
+	"sgtxt": "sgtxt 9",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%209',lifnr='lifnr%209',belnr='belnr%209',gjahr='gjahr%209',buzei='buzei%209')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}, {
+	"bsik_key": "bsik_key 10",
+	"lifnr": "lifnr 10",
+	"belnr": "belnr 10",
+	"gjahr": "gjahr 10",
+	"buzei": "buzei 10",
+	"bukrs": "bukrs 10",
+	"blart": "blart 10",
+	"budat": "budat 10",
+	"bldat": "bldat 10",
+	"wrbtr": 2847.74,
+	"dmbtr": 341.32,
+	"waers": "waers 10",
+	"waers2": "waers2 10",
+	"mwskz": "mwskz 10",
+	"sgtxt": "sgtxt 10",
+	"__metadata": {
+		"uri": "PartidasSet(bsik_key='bsik_key%2010',lifnr='lifnr%2010',belnr='belnr%2010',gjahr='gjahr%2010',buzei='buzei%2010')",
+		"type": "ZSNC002_SRV.Partidas"
+	}
+}]

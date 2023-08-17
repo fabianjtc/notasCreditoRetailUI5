@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Centros de Beneficio"
+		class="sapUiPopupWithPadding"
+		items="{/CeBeSet}"
+		search="_prctrValueHelpSearch"
+		confirm="_prctrValueHelpClose"
+		cancel="_prctrValueHelpClose">
+		<StandardListItem
+			title="{prctr}"
+			description="{ktext}" />
+	</SelectDialog>
+</core:FragmentDefinition>

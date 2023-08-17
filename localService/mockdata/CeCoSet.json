@@ -1,0 +1,71 @@
+[{
+	"kostl": "kostl 1",
+	"ktext": "ktext 1",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%201')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 2",
+	"ktext": "ktext 2",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%202')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 3",
+	"ktext": "ktext 3",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%203')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 4",
+	"ktext": "ktext 4",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%204')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 5",
+	"ktext": "ktext 5",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%205')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 6",
+	"ktext": "ktext 6",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%206')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 7",
+	"ktext": "ktext 7",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%207')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 8",
+	"ktext": "ktext 8",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%208')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 9",
+	"ktext": "ktext 9",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%209')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}, {
+	"kostl": "kostl 10",
+	"ktext": "ktext 10",
+	"__metadata": {
+		"uri": "CeCoSet('kostl%2010')",
+		"type": "ZSNC002_SRV.CeCo"
+	}
+}]

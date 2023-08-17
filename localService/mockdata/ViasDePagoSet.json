@@ -1,0 +1,71 @@
+[{
+	"zlsch": "zlsch 1",
+	"text1": "text1 1",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%201')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 2",
+	"text1": "text1 2",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%202')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 3",
+	"text1": "text1 3",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%203')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 4",
+	"text1": "text1 4",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%204')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 5",
+	"text1": "text1 5",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%205')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 6",
+	"text1": "text1 6",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%206')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 7",
+	"text1": "text1 7",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%207')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 8",
+	"text1": "text1 8",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%208')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 9",
+	"text1": "text1 9",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%209')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}, {
+	"zlsch": "zlsch 10",
+	"text1": "text1 10",
+	"__metadata": {
+		"uri": "ViasDePagoSet('zlsch%2010')",
+		"type": "ZSNC002_SRV.ViasDePago"
+	}
+}]

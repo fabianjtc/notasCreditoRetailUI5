@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Centros de Costo"
+		class="sapUiPopupWithPadding"
+		items="{/CeCoSet}"
+		search="_kostlValueHelpSearch"
+		confirm="_kostlValueHelpClose"
+		cancel="_kostlValueHelpClose">
+		<StandardListItem
+			title="{kostl}"
+			description="{ktext}" />
+	</SelectDialog>
+</core:FragmentDefinition>

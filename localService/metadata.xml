@@ -1,0 +1,506 @@
+<edmx:Edmx xmlns:sap="http://www.sap.com/Protocols/SAPData" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xml:lang="es" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" Namespace="ZOD_SNC_LOGISTICO_SRV">
+			<Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" String="1.0.0" Term="Core.SchemaVersion"/>
+			<EntityType sap:content-version="1" sap:label="Acreedores" Name="Acreedores">
+				<Key>
+					<PropertyRef Name="bsik_key"/>
+				</Key>
+				<Property sap:label="Bsik_key" Name="bsik_key" sap:unicode="false" MaxLength="14" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Acreedor" Name="lifnr" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property sap:label="Sociedad" Name="bukrs" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+				<Property sap:label="Moneda" Name="waers" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property sap:label="Nombre" Name="name1" sap:unicode="false" MaxLength="35" Type="Edm.String"/>
+				<Property sap:label="Con.Pago" Name="zterm" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+				<Property sap:label="Bl. de Pago" Name="zahls" sap:unicode="false" MaxLength="1" Type="Edm.String"/>
+				<Property sap:label="Importe" Name="wrbtr" sap:unicode="false" MaxLength="23" Type="Edm.String"/>
+				<Property sap:label="Imporme ML" Name="dmbtr" sap:unicode="false" Type="Edm.Decimal" Scale="4" Precision="23"/>
+				<Property sap:label="Cant.Partidas" Name="cantitems" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property sap:label="Texto Rev" Name="revtext" sap:unicode="false" MaxLength="40" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false"/>
+				<Property sap:label="Proceso" Name="proceso" sap:unicode="false" MaxLength="1" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Via de Pago" Name="zwels" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property sap:label="ID Cuenta" Name="hbkid" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<NavigationProperty Name="ToPartidas" ToRole="ToRole_Assoc_Acreedores_Partidas" FromRole="FromRole_Assoc_Acreedores_Partidas"
+					Relationship="ZOD_SNC_LOGISTICO_SRV.Assoc_Acreedores_Partidas"/>
+			</EntityType>
+			<EntityType sap:content-version="1" sap:label="Partidas del Acreedor" Name="Partidas">
+				<Key>
+					<PropertyRef Name="belnr"/>
+					<PropertyRef Name="gjahr"/>
+					<PropertyRef Name="buzei"/>
+					<PropertyRef Name="bukrs"/>
+					<PropertyRef Name="blart"/>
+				</Key>
+				<Property Name="bsik_key" sap:unicode="false" MaxLength="14" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Acreedor" Name="lifnr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Nº documento" Name="belnr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Ejercicio" Name="gjahr" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Posición" Name="buzei" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Sociedad" Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Clase documento" Name="blart" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Fecha contab." Name="budat" sap:unicode="false" MaxLength="8" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Fecha documento" Name="bldat" sap:unicode="false" MaxLength="8" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Importe" Name="wrbtr" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="15" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Moneda Doc." Name="waers2" sap:unicode="false" MaxLength="5" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Importe" Name="dmbtr" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="15" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Moneda Soc." Name="waers" sap:unicode="false" MaxLength="5" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Ind.impuestos" Name="mwskz" sap:unicode="false" MaxLength="2" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Texto" Name="sgtxt" sap:unicode="false" MaxLength="50" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Referencia" Name="xblnr" sap:unicode="false" MaxLength="16" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Impuesto ML" Name="fwste" sap:unicode="false" Nullable="false" Type="Edm.Decimal" Scale="2" Precision="15"
+					sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Texto de cabecera" Name="bktxt" sap:unicode="false" MaxLength="25" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Count" Name="Count" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Flag logistico" Name="flag" sap:unicode="false" MaxLength="1" Type="Edm.String" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property sap:label="Proceso" Name="proceso" sap:unicode="false" MaxLength="1" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<NavigationProperty Name="ToDocsLogisticos" ToRole="ToRole_Assoc_Partidas_DocsLogisticos" FromRole="FromRole_Assoc_Partidas_DocsLogisticos"
+					Relationship="ZOD_SNC_LOGISTICO_SRV.Assoc_Partidas_DocsLogisticos"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Docheader">
+				<Key>
+					<PropertyRef Name="bukrs"/>
+					<PropertyRef Name="belnr"/>
+					<PropertyRef Name="gjahr"/>
+				</Key>
+				<Property sap:label="Sociedad" Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Documento" Name="belnr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Año" Name="gjahr" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="budat" sap:unicode="false" MaxLength="8" Type="Edm.String"/>
+				<Property Name="bldat" sap:unicode="false" MaxLength="8" Type="Edm.String"/>
+				<Property sap:label="Periodo" Name="monat" sap:unicode="false" MaxLength="2" Type="Edm.String"/>
+				<Property sap:label="Cl.Doc." Name="blart" sap:unicode="false" MaxLength="2" Type="Edm.String"/>
+				<Property sap:label="Moneda" Name="waers" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property sap:label="Referencia" Name="xblnr" sap:unicode="false" MaxLength="16" Type="Edm.String"/>
+				<Property sap:label="Texto Cab." Name="bktxt" sap:unicode="false" MaxLength="25" Type="Edm.String"/>
+				<Property Name="kursf" sap:unicode="false" MaxLength="12" Type="Edm.String"/>
+				<Property Name="wwert" sap:unicode="false" MaxLength="8" Type="Edm.String"/>
+				<Property Name="name1" sap:unicode="false" MaxLength="35" Type="Edm.String"/>
+				<Property Name="timbrado" sap:unicode="false" MaxLength="8" Type="Edm.String"/>
+				<Property Name="proceso" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<NavigationProperty Name="ToDocLogist" ToRole="ToRole_Assoc_Docheader_DocsLogist" FromRole="FromRole_Assoc_Docheader_DocsLogist"
+					Relationship="ZOD_SNC_LOGISTICO_SRV.Assoc_Docheader_DocsLogist"/>
+				<NavigationProperty Name="ToDocitems" ToRole="ToRole_Assoc_Docheader_Docitems" FromRole="FromRole_Assoc_Docheader_Docitems"
+					Relationship="ZOD_SNC_LOGISTICO_SRV.Assoc_Docheader_Docitems"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Docitems">
+				<Key>
+					<PropertyRef Name="bukrs"/>
+					<PropertyRef Name="belnr"/>
+					<PropertyRef Name="gjahr"/>
+					<PropertyRef Name="buzei"/>
+				</Key>
+				<Property Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:updatable="false"/>
+				<Property Name="belnr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="gjahr" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="buzei" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String"/>
+				<Property Name="dmbtr" sap:unicode="false" Nullable="false" Type="Edm.Decimal" Scale="4" Precision="23"/>
+				<Property Name="wrbtr" sap:unicode="false" Type="Edm.Decimal" Scale="4" Precision="23"/>
+				<Property Name="zfbdt" sap:unicode="false" MaxLength="8" Type="Edm.String"/>
+				<Property Name="zterm" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+				<Property Name="zlsch" sap:unicode="false" MaxLength="1" Type="Edm.String"/>
+				<Property Name="zlspr" sap:unicode="false" MaxLength="1" Type="Edm.String"/>
+				<Property Name="zuonr" sap:unicode="false" MaxLength="18" Type="Edm.String"/>
+				<Property Name="hbkid" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property Name="hktid" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property Name="mwskz" sap:unicode="false" MaxLength="2" Type="Edm.String"/>
+				<Property Name="kostl" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="aufnr" sap:unicode="false" MaxLength="12" Type="Edm.String"/>
+				<Property Name="prctr" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="segment" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="sgtxt" sap:unicode="false" MaxLength="50" Type="Edm.String"/>
+				<Property Name="xblnr" sap:unicode="false" MaxLength="16" Type="Edm.String"/>
+				<Property Name="lifnr" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="hkont" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="taxAccount" sap:unicode="false" MaxLength="10" Type="Edm.String"/>
+				<Property Name="taxAmount" sap:unicode="false" Type="Edm.Decimal" Scale="4" Precision="15"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Sociedad">
+				<Key>
+					<PropertyRef Name="bukrs"/>
+				</Key>
+				<Property Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property Name="butxt" sap:unicode="false" MaxLength="25" Type="Edm.String"/>
+				<NavigationProperty Name="ToAcreedores" ToRole="ToRole_Assoc_Sociedades_Acreedores" FromRole="FromRole_Assoc_Sociedades_Acreedores"
+					Relationship="ZOD_SNC_LOGISTICO_SRV.Assoc_Sociedades_Acreedores"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Moneda">
+				<Key>
+					<PropertyRef Name="waers"/>
+				</Key>
+				<Property Name="waers" sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="ltext" sap:unicode="false" MaxLength="40" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="ClaseDoc">
+				<Key>
+					<PropertyRef Name="blart"/>
+				</Key>
+				<Property Name="blart" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="ltext" sap:unicode="false" MaxLength="20" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="CeCo">
+				<Key>
+					<PropertyRef Name="kostl"/>
+				</Key>
+				<Property Name="kostl" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="ktext" sap:unicode="false" MaxLength="20" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="CeBe">
+				<Key>
+					<PropertyRef Name="prctr"/>
+				</Key>
+				<Property Name="prctr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property Name="ktext" sap:unicode="false" MaxLength="20" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="ViasDePago">
+				<Key>
+					<PropertyRef Name="zlsch"/>
+				</Key>
+				<Property Name="zlsch" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String"/>
+				<Property Name="text1" sap:unicode="false" MaxLength="30" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="IndImp">
+				<Key>
+					<PropertyRef Name="mwskz"/>
+				</Key>
+				<Property Name="mwskz" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property Name="text1" sap:unicode="false" MaxLength="50" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Bancos">
+				<Key>
+					<PropertyRef Name="hbkid"/>
+					<PropertyRef Name="hktid"/>
+				</Key>
+				<Property Name="hbkid" sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="hktid" sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String"/>
+				<Property Name="text1" sap:unicode="false" MaxLength="50" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="response">
+				<Key>
+					<PropertyRef Name="lognumber"/>
+					<PropertyRef Name="msgnumber"/>
+				</Key>
+				<Property sap:label="Nro.Log" Name="lognumber" sap:unicode="false" MaxLength="20" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false"/>
+				<Property sap:label="Nro.Mensaje" Name="msgnumber" sap:unicode="false" MaxLength="6" Nullable="false" Type="Edm.String"
+					sap:filterable="false" sap:sortable="false"/>
+				<Property sap:label="Tipo" Name="msgty" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false"/>
+				<Property sap:label="Mensaje" Name="msgtx" sap:unicode="false" MaxLength="150" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Zlsch">
+				<Key>
+					<PropertyRef Name="land1"/>
+					<PropertyRef Name="zlsch"/>
+				</Key>
+				<Property Name="land1" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String" sap:sortable="false" sap:updatable="false"
+					sap:creatable="false"/>
+				<Property Name="zlsch" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="text1" sap:unicode="false" MaxLength="30" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Zlspr">
+				<Key>
+					<PropertyRef Name="spras"/>
+					<PropertyRef Name="zahls"/>
+				</Key>
+				<Property Name="spras" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="zahls" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="textl" sap:unicode="false" MaxLength="20" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TextCab">
+				<Key>
+					<PropertyRef Name="codtext"/>
+				</Key>
+				<Property Name="codtext" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property Name="sgtxt" sap:unicode="false" MaxLength="50" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Saknr">
+				<Key>
+					<PropertyRef Name="spras"/>
+					<PropertyRef Name="ktopl"/>
+					<PropertyRef Name="saknr"/>
+				</Key>
+				<Property Name="spras" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="ktopl" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="saknr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="txt20" sap:unicode="false" MaxLength="20" Type="Edm.String"/>
+				<Property Name="bukrs" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Aufnr">
+				<Key>
+					<PropertyRef Name="aufnr"/>
+				</Key>
+				<Property Name="aufnr" sap:unicode="false" MaxLength="12" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="ktext" sap:unicode="false" MaxLength="40" Type="Edm.String"/>
+				<Property Name="bukrs" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+				<Property Name="kokrs" sap:unicode="false" MaxLength="4" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Zterm">
+				<Key>
+					<PropertyRef Name="spras"/>
+					<PropertyRef Name="zterm"/>
+				</Key>
+				<Property Name="spras" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="zterm" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:updatable="false" sap:creatable="false"/>
+				<Property Name="text1" sap:unicode="false" MaxLength="50" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="TaxAmount">
+				<Key>
+					<PropertyRef Name="buzei"/>
+				</Key>
+				<Property Name="buzei" sap:unicode="false" MaxLength="3" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property Name="hkont" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property Name="taxAmount" sap:unicode="false" Nullable="false" Type="Edm.Decimal" Scale="4" Precision="15" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="result">
+				<Key>
+					<PropertyRef Name="number"/>
+				</Key>
+				<Property Name="number" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property Name="type" sap:unicode="false" MaxLength="1" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+				<Property Name="message" sap:unicode="false" MaxLength="30" Nullable="false" Type="Edm.String" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false" sap:creatable="false"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="DocsLogisticos">
+				<Key>
+					<PropertyRef Name="bukrs"/>
+					<PropertyRef Name="belnr"/>
+					<PropertyRef Name="gjahr"/>
+					<PropertyRef Name="buzei"/>
+				</Key>
+				<Property sap:label="Sociedad" Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="N° documento" Name="belnr" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Ejercicio" Name="gjahr" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Posición" Name="buzei" sap:unicode="true" MaxLength="6" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Clase de documento" Name="blart" sap:unicode="false" MaxLength="2" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Ean" Name="ean11" sap:unicode="false" MaxLength="18" Nullable="false" Type="Edm.String"/>
+				<Property sap:label="Cantidad" Name="bpmng" sap:unicode="false" Type="Edm.Decimal" Scale="3" Precision="13"/>
+				<Property sap:label="Unidad de medida" Name="bprme" sap:unicode="false" MaxLength="3" Type="Edm.String"/>
+				<Property sap:label="Texto Breve" Name="txz01" sap:unicode="false" MaxLength="40" Type="Edm.String"/>
+				<Property sap:label="Precio Neto" Name="netpr" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="11"/>
+				<Property sap:label="Importe" Name="netwr" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="13"/>
+				<Property sap:label="Cantidad" Name="menge" sap:unicode="false" Type="Edm.Decimal" Scale="3" Precision="13"/>
+				<Property sap:label="Unidad de medida" Name="bstme" sap:unicode="false" MaxLength="3" Type="Edm.String"/>
+				<Property sap:label="Ind.Impuesto" Name="mwskz" sap:unicode="false" MaxLength="2" Type="Edm.String"/>
+				<Property sap:label="Valor NC" Name="valor_nc" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="13"/>
+				<Property sap:label="Clave moneda" Name="waers" sap:unicode="false" MaxLength="5" Type="Edm.String"/>
+				<Property sap:label="Cantidad NC" Name="menge_nc" sap:unicode="false" Type="Edm.Decimal" Scale="3" Precision="13"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Tolerancia">
+				<Key>
+					<PropertyRef Name="bukrs"/>
+					<PropertyRef Name="waers"/>
+				</Key>
+				<Property sap:label="Sociedad" Name="bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:filterable="false"/>
+				<Property sap:label="Moneda" Name="waers" sap:unicode="false" MaxLength="5" Nullable="false" Type="Edm.String" sap:filterable="false"/>
+				<Property sap:label="Valor Tolerancia" Name="valor_tolerancia" sap:unicode="false" Type="Edm.Decimal" Scale="2" Precision="11"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Bloqueado">
+				<Key>
+					<PropertyRef Name="Bukrs"/>
+					<PropertyRef Name="Konko"/>
+				</Key>
+				<Property sap:label="Sociedad" Name="Bukrs" sap:unicode="false" MaxLength="4" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Cuenta" Name="Konko" sap:unicode="false" MaxLength="10" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Indicador" Name="Block" sap:unicode="false" Nullable="false" Type="Edm.Boolean" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+				<Property sap:label="Variable de mensaje" Name="Messg" sap:unicode="false" MaxLength="50" Nullable="false" Type="Edm.String"
+					sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"/>
+			</EntityType>
+			<Association sap:content-version="1" Name="Assoc_Sociedades_Acreedores">
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Sociedad" Role="FromRole_Assoc_Sociedades_Acreedores" Multiplicity="0..1"/>
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Acreedores" Role="ToRole_Assoc_Sociedades_Acreedores" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Sociedades_Acreedores">
+						<PropertyRef Name="bukrs"/>
+					</Principal>
+					<Dependent Role="ToRole_Assoc_Sociedades_Acreedores">
+						<PropertyRef Name="bukrs"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="Assoc_Docheader_Docitems">
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Docheader" Role="FromRole_Assoc_Docheader_Docitems" Multiplicity="0..1"/>
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Docitems" Role="ToRole_Assoc_Docheader_Docitems" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Docheader_Docitems">
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="bukrs"/>
+					</Principal>
+					<Dependent Role="ToRole_Assoc_Docheader_Docitems">
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="bukrs"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="Assoc_Docheader_DocsLogist">
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Docheader" Role="FromRole_Assoc_Docheader_DocsLogist" Multiplicity="0..1"/>
+				<End Type="ZOD_SNC_LOGISTICO_SRV.DocsLogisticos" Role="ToRole_Assoc_Docheader_DocsLogist" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Docheader_DocsLogist">
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="bukrs"/>
+					</Principal>
+					<Dependent Role="ToRole_Assoc_Docheader_DocsLogist">
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="bukrs"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="Assoc_Acreedores_Partidas">
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Acreedores" Role="FromRole_Assoc_Acreedores_Partidas" Multiplicity="0..1"/>
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Partidas" Role="ToRole_Assoc_Acreedores_Partidas" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Acreedores_Partidas">
+						<PropertyRef Name="bsik_key"/>
+					</Principal>
+					<Dependent Role="ToRole_Assoc_Acreedores_Partidas">
+						<PropertyRef Name="bsik_key"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association sap:content-version="1" Name="Assoc_Partidas_DocsLogisticos">
+				<End Type="ZOD_SNC_LOGISTICO_SRV.Partidas" Role="FromRole_Assoc_Partidas_DocsLogisticos" Multiplicity="0..1"/>
+				<End Type="ZOD_SNC_LOGISTICO_SRV.DocsLogisticos" Role="ToRole_Assoc_Partidas_DocsLogisticos" Multiplicity="*"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Partidas_DocsLogisticos">
+						<PropertyRef Name="bukrs"/>
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="buzei"/>
+						<PropertyRef Name="blart"/>
+					</Principal>
+					<Dependent Role="ToRole_Assoc_Partidas_DocsLogisticos">
+						<PropertyRef Name="bukrs"/>
+						<PropertyRef Name="belnr"/>
+						<PropertyRef Name="gjahr"/>
+						<PropertyRef Name="buzei"/>
+						<PropertyRef Name="blart"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZOD_SNC_LOGISTICO_SRV_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true">
+				<EntitySet sap:content-version="1" Name="AcreedoresSet" EntityType="ZOD_SNC_LOGISTICO_SRV.Acreedores"/>
+				<EntitySet sap:content-version="1" Name="PartidasSet" EntityType="ZOD_SNC_LOGISTICO_SRV.Partidas"/>
+				<EntitySet sap:content-version="1" Name="DocheaderSet" EntityType="ZOD_SNC_LOGISTICO_SRV.Docheader"/>
+				<EntitySet sap:content-version="1" Name="DocitemsSet" EntityType="ZOD_SNC_LOGISTICO_SRV.Docitems"/>
+				<EntitySet sap:content-version="1" Name="SociedadSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.Sociedad" sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="MonedaSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Moneda"
+					sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="ClaseDocSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.ClaseDoc" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="CeCoSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.CeCo"
+					sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="CeBeSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.CeBe"
+					sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="ViasDePagoSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.ViasDePago" sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="IndImpSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.IndImp"
+					sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="BancosSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Bancos"
+					sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="responseSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.response" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="ZlschSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Zlsch"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="ZlsprSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Zlspr"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="TextCabSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.TextCab"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="SaknrSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Saknr"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="AufnrSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Aufnr"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="ZtermSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.Zterm"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="TaxAmountSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.TaxAmount" sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="resultSet" sap:updatable="false" sap:creatable="false" EntityType="ZOD_SNC_LOGISTICO_SRV.result"
+					sap:addressable="false" sap:pageable="false" sap:deletable="false"/>
+				<EntitySet sap:content-version="1" Name="DocsLogisticosSet" EntityType="ZOD_SNC_LOGISTICO_SRV.DocsLogisticos"/>
+				<EntitySet sap:content-version="1" Name="ToleranciaSet" EntityType="ZOD_SNC_LOGISTICO_SRV.Tolerancia"/>
+				<EntitySet sap:content-version="1" Name="BloqueadoSet" sap:updatable="false" sap:creatable="false"
+					EntityType="ZOD_SNC_LOGISTICO_SRV.Bloqueado" sap:pageable="false" sap:deletable="false"/>
+				<AssociationSet sap:content-version="1" Name="Assoc_Docheader_Docitems_AssocSet" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZOD_SNC_LOGISTICO_SRV.Assoc_Docheader_Docitems">
+					<End Role="FromRole_Assoc_Docheader_Docitems" EntitySet="DocheaderSet"/>
+					<End Role="ToRole_Assoc_Docheader_Docitems" EntitySet="DocitemsSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="Assoc_Acreedores_Partidas_AssocSet" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZOD_SNC_LOGISTICO_SRV.Assoc_Acreedores_Partidas">
+					<End Role="FromRole_Assoc_Acreedores_Partidas" EntitySet="AcreedoresSet"/>
+					<End Role="ToRole_Assoc_Acreedores_Partidas" EntitySet="PartidasSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="Assoc_Docheader_DocsLogist_AssocSet" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZOD_SNC_LOGISTICO_SRV.Assoc_Docheader_DocsLogist">
+					<End Role="FromRole_Assoc_Docheader_DocsLogist" EntitySet="DocheaderSet"/>
+					<End Role="ToRole_Assoc_Docheader_DocsLogist" EntitySet="DocsLogisticosSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="Assoc_Partidas_DocsLogisticos_AssocSet" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZOD_SNC_LOGISTICO_SRV.Assoc_Partidas_DocsLogisticos">
+					<End Role="FromRole_Assoc_Partidas_DocsLogisticos" EntitySet="PartidasSet"/>
+					<End Role="ToRole_Assoc_Partidas_DocsLogisticos" EntitySet="DocsLogisticosSet"/>
+				</AssociationSet>
+				<AssociationSet sap:content-version="1" Name="Assoc_Sociedades_AcreedoresSet" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZOD_SNC_LOGISTICO_SRV.Assoc_Sociedades_Acreedores">
+					<End Role="FromRole_Assoc_Sociedades_Acreedores" EntitySet="SociedadSet"/>
+					<End Role="ToRole_Assoc_Sociedades_Acreedores" EntitySet="AcreedoresSet"/>
+				</AssociationSet>
+				<FunctionImport Name="CalculateTax" EntitySet="TaxAmountSet" m:HttpMethod="GET" ReturnType="ZOD_SNC_LOGISTICO_SRV.TaxAmount">
+					<Parameter Name="waers" MaxLength="3" Type="Edm.String" Mode="In"/>
+					<Parameter Name="dmbtr" Type="Edm.Decimal" Scale="4" Precision="4" Mode="In"/>
+					<Parameter Name="mwskz" MaxLength="2" Type="Edm.String" Mode="In"/>
+					<Parameter Name="bukrs" MaxLength="4" Type="Edm.String" Mode="In"/>
+					<Parameter Name="buzei" MaxLength="3" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="Timbrado" EntitySet="resultSet" m:HttpMethod="GET" ReturnType="ZOD_SNC_LOGISTICO_SRV.result">
+					<Parameter Name="lifnr" MaxLength="10" Type="Edm.String" Mode="In"/>
+					<Parameter Name="timbrado" MaxLength="8" Type="Edm.String" Mode="In"/>
+					<Parameter Name="blart" MaxLength="2" Type="Edm.String" Mode="In"/>
+					<Parameter Name="bldat" MaxLength="8" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+				<FunctionImport Name="LeerParametro" EntitySet="resultSet" m:HttpMethod="GET" ReturnType="ZOD_SNC_LOGISTICO_SRV.result">
+					<Parameter Name="parametro" MaxLength="2" Type="Edm.String" Mode="In"/>
+					<Parameter Name="bukrs" MaxLength="4" Type="Edm.String" Mode="In"/>
+				</FunctionImport>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZOD_SNC_LOGISTICO_SRV/$metadata" rel="self"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZOD_SNC_LOGISTICO_SRV/$metadata" rel="latest-version"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

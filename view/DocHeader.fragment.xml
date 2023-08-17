@@ -1,0 +1,50 @@
+<core:FragmentDefinition controllerName="zfisncv2.controller.Detail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm id="id_formHeader" editable="true" layout="ResponsiveGridLayout" columnsXL="2" columnsL="2" columnsM="2">
+		<f:toolbar>
+			<Toolbar>
+				<Title text=""/>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Text text="Saldo Total:"/>
+				<ObjectNumber
+					number="{ parts:[{path:'controlModel>/wrbtrDif'},{path:'waers'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+					unit="{waers}" state="{= ${controlModel>/wrbtrDif} === 0 ? 'Success' : 'Error' }"/>
+			</Toolbar>
+		</f:toolbar>
+		<f:content>
+			<core:Title text="Cabecera del Documento"/>
+			<Label text="{i18n>budatTxtL}"/>
+			<DatePicker value="{HeaderData>/budat}" valueFormat="yyyyMMdd" required="true" change="onChangeBudat" width="70%"/>
+			<Label text="{i18n>bldatTxtL}"/>
+			<DatePicker value="{HeaderData>/bldat}" valueFormat="yyyyMMdd" required="true" width="70%"/>
+			<Label text="{i18n>monatTxt}"/>
+			<ComboBox value="{HeaderData>/monat}" showSecondaryValues="true" width="30%" items="{periodosModel>/items}" required="true">
+				<core:ListItem key="{periodosModel>periodo}" text="{periodosModel>periodo}"/>
+			</ComboBox>
+			<Label text="{i18n>blartTxt}"/>
+			<ComboBox id="id_blart" value="{HeaderData>/blart}" showSecondaryValues="true" width="50%"
+				items="{ path: '/ClaseDocSet', templateShareable:false, sorter: { path: 'blart' } }" required="true">
+				<core:ListItem key="{blart}" text="{blart}" additionalText="{ltext}"/>
+			</ComboBox>
+			<Label text="{i18n>waersTxtL}"/>
+			<Input id="id_waers" type="Text" value="{HeaderData>/waers}" required="true" placeholder="Moneda...." width="50%" showSuggestion="true"
+				showValueHelp="true" valueHelpOnly="true" valueHelpRequest="waersValueHelp" suggestionItems="{path: '/MonedaSet', templateShareable:false}">
+				<suggestionItems>
+					<core:Item text="{waers}"/>
+				</suggestionItems>
+			</Input>
+			<core:Title text=""/>
+			<Label text="{i18n>timbradoTxt}"/>
+			<Input value="{HeaderData>/timbrado}" maxLength="8" width="80%" required="true"/>
+			<core:Icon src="sap-icon://play" width="20%" tooltip="Verificar" press="onCheckTimbrado" size="25px" color="Green"/>
+			<Label text="{i18n>xblnrTxt}"/>
+			<Input value="{HeaderData>/xblnr}" maxLength="16" width="60%" required="true"/>
+			<Label text="{i18n>bktxtTxt}"/>
+			<Input value="{HeaderData>/bktxt}" maxLength="25"/>
+			<Label text="{i18n>kursfTxt}"/>
+			<Input value="{HeaderData>/kursf}" maxLength="10"/>
+			<Label text="{i18n>wwertTxt}"/>
+			<DatePicker value="{HeaderData>/wwert}" valueFormat="yyyyMMdd" width="70%"/>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

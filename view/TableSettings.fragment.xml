@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm="handleSortConfirm">
+		<sortItems>
+			<ViewSettingsItem text="Documento" key="belnr" selected="true"/>
+			<ViewSettingsItem text="Fe.Contabilizacion" key="budat"/>
+			<ViewSettingsItem text="Clase documento" key="blart"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

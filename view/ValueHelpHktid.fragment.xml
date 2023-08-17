@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Id de Cuentas"
+		class="sapUiPopupWithPadding"
+		items="{/BancosSet}"
+		search="_hktidValueHelpSearch"
+		confirm="_hktidValueHelpClose"
+		cancel="_hktidValueHelpClose">
+		<StandardListItem
+			title="{hktid}"
+			description="{text1}" />
+	</SelectDialog>
+</core:FragmentDefinition>

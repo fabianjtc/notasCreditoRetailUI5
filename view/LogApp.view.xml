@@ -1,0 +1,67 @@
+<mvc:View
+	controllerName="zfisncv2.controller.LogApp"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns="sap.m">
+	<semantic:FullscreenPage
+		id="id_LogApp"
+		title="{i18n>titleLogAppPage}"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		
+		<semantic:content>
+
+			<Table
+				id="id_tablogapp"
+				noDataText="No hay procesos el dia de hoy"
+				width="100%"
+				items="{/responseSet}" >
+
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar3">
+						<Button id="id_btnrflog" 
+								tooltip="Actualizar" 
+								icon="sap-icon://synchronize" 
+								press="onBtnRefreshLog"
+								enabled="true" />
+					</Toolbar>
+				</headerToolbar>	
+			
+				<columns>
+					<Column visible="false" width="10%">
+						<Text text="Tipo"/>
+					</Column>
+					<Column width="10%">
+						<Text text="Tipo"/>
+					</Column>
+					<Column>
+						<Text text="Mensaje"/>
+					</Column>
+				</columns>	
+					
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{msgty}"/>
+							<core:Icon 
+								src="{
+									path : 'msgty',
+									formatter: '.formatter.logIcon'
+								}" 
+								color="{ 
+									path: 'msgty', 
+									formatter: '.formatter.logIconColor' 
+								}" 
+								tooltip="{= ${msgty} === 'E' ? 'Error' : 'Informacion' }" />
+							<Text text="{msgtx}"/>
+						</cells>
+					</ColumnListItem>
+				</items>	
+						
+			</Table>
+
+		</semantic:content>
+		
+	</semantic:FullscreenPage>
+</mvc:View>

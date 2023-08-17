@@ -1,0 +1,216 @@
+{
+    "_version": "1.4.0",
+    "sap.app": {
+        "id": "zfisncv2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZOD_SNC_LOGISTICO_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "controldata": {
+                "uri": "model/ControlData.json",
+                "type": "JSON"
+            },
+            "selecteddata": {
+                "uri": "model/SelectedData.json",
+                "type": "JSON"
+            },
+            "headerdata": {
+                "uri": "model/HeaderData.json",
+                "type": "JSON"
+            },
+            "vendordata": {
+                "uri": "model/VendorData.json",
+                "type": "JSON"
+            },
+            "itemsdata": {
+                "uri": "model/ItemsData.json",
+                "type": "JSON"
+            },
+            "logisticdata": {
+                "uri": "model/LogisticData.json",
+                "type": "JSON"
+            }
+        },
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://detail-view",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal",
+            "sap_fiori_3",
+            "sap_horizon"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "zfisncv2.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.108.0",
+            "libs": {
+                "sap.collaboration": {
+                    "minVersion": "1.108",
+                    "lazy": true
+                },
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ui.core": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zfisncv2.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            },
+            "ControlData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "controldata"
+            },
+            "SelectedData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "selecteddata"
+            },
+            "HeaderData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "headerdata"
+            },
+            "VendorData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "vendordata"
+            },
+            "ItemsData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "itemsdata"
+            },
+            "LogisticData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "logisticdata"
+            }
+        },
+        "config": {
+            "fullWidth": true
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "viewPath": "zfisncv2.view",
+                "controlId": "idAppControl",
+                "bypassed": {
+                    "target": [
+                        "master",
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "master",
+                    "target": [
+                        "object",
+                        "master"
+                    ],
+                    "layout": "TwoColumnsBeginExpanded"
+                },
+                {
+                    "pattern": "AcreedoresSet/{objectId}",
+                    "name": "object",
+                    "target": [
+                        "master",
+                        "object"
+                    ],
+                    "layout": "TwoColumnsMidExpanded",
+                    "greedy": false
+                },
+                {
+                    "pattern": "LogApp",
+                    "name": "logapp",
+                    "target": "logapp"
+                }
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Master",
+                    "viewLevel": 1,
+                    "viewId": "master",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "object": {
+                    "viewName": "Detail",
+                    "viewId": "detail",
+                    "viewLevel": 2,
+                    "controlAggregation": "midColumnPages"
+                },
+                "logapp": {
+                    "viewName": "LogApp",
+                    "viewId": "logapp",
+                    "viewLevel": 3,
+                    "transition": "flip",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailObjectNotFound": {
+                    "viewName": "DetailObjectNotFound",
+                    "viewId": "detailObjectNotFound",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailNoObjectsAvailable": {
+                    "viewName": "DetailNoObjectsAvailable",
+                    "viewId": "detailNoObjectsAvailable",
+                    "controlAggregation": "midColumnPages"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zfisncv2",
+        "_version": "1.1.0"
+    }
+}

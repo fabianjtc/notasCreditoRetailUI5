@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Cuenta/Segmento"
+		class="sapUiPopupWithPadding"
+		items="{/SaknrSet}"
+		search="_segmentValueHelpSearch"
+		confirm="_segmentValueHelpClose"
+		cancel="_segmentValueHelpClose">
+		<StandardListItem
+			title="{saknr}"
+			description="{txt20}" />
+	</SelectDialog>
+</core:FragmentDefinition>
