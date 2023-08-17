@@ -6,10 +6,9 @@ sap.ui.define([
 	"zfisncv2/model/formatter",
 	"zfisncv2/model/models",
 	"sap/m/Dialog",
-	"sap/ui/comp/valuehelpdialog/ValueHelpDialog",
-	'sap/ui/core/BusyIndicator'
+	"sap/ui/comp/valuehelpdialog/ValueHelpDialog"
 
-], function(BaseController, JSONModel, Filter, formatter, models, Dialog, ValueHelpDialog, BusyIndicator) {
+], function(BaseController, JSONModel, Filter, formatter, models, Dialog, ValueHelpDialog) {
 	"use strict";
 	var oValueHelpDialog = null;
 	var oVista = null;
@@ -253,7 +252,7 @@ sap.ui.define([
 			var iWrbtrTot = 0;
 			var iWrbtr = 0;
 
-			if (aDataSelec >= 1) {
+			if (aDataSelec === 1) {
 				for (var i = 0; i < aDataSel.length; i++) {
 					iWrbtr = aDataSel[i].valor_nc * 1;
 					iWrbtrTot = iWrbtrTot + iWrbtr;
@@ -317,7 +316,7 @@ sap.ui.define([
 			var aSelectedData = this.getModel("SelectedData").getData().Items;
 			// var vCantSel = aSelectedData.length;
 
-			if (vCantSel >= 1 && aSelectedData[0].flag === 'X') {
+			if (vCantSel === 1 && aSelectedData[0].flag === 'X') {
 				this._updateButtons2(true, false, false, false, false);
 			} else if (vCantSel === 1) {
 				this._updateButtons2(false, true, true, true, false);
@@ -339,22 +338,6 @@ sap.ui.define([
 			oBinding.sort(aSorters);
 			aSorters.push(new sap.ui.model.Sorter(sPath, bDescending));
 			oBinding.sort(aSorters);
-		},
-
-		getGroup: function(oContext) {
-			return oContext.getProperty('belnr');
-		},
-
-		getGroupHeader: function(oGroup) {
-
-			return new sap.m.GroupHeaderListItem({
-				title: oGroup.key,
-				press: "onPressGroup"
-			});
-		},
-		
-		onPressGroup: function(oEvent) {
-			debugger;
 		},
 
 		//
@@ -396,64 +379,30 @@ sap.ui.define([
 			var oControlModelLog = this._createControlModelLog();
 			this.setModel(oControlModelLog, "controlModelLog");
 
-			if (vCantSel >= 1) {
-
-				/*				for (var i = 0; i < aSelectedData.length; i++) {
-									var logistic = {};
-									logistic.belnr = aSelectedData[i].belnr;
-									logistic.gjahr = aSelectedData[i].gjahr;
-									logistic.buzei = aSelectedData[i].buzei;
-									logistic.bukrs = aSelectedData[i].bukrs;
-									logistic.blart = aSelectedData[i].blart;
-								}
-
-								var sPath = "/PartidasSet(belnr='" + logistic.belnr + "\'," +
-									"gjahr='" + logistic.gjahr + "\'," +
-									"buzei='" + logistic.buzei + "\'," +
-									"bukrs='" + logistic.bukrs + "\'," +
-									"blart='" + logistic.blart + "')/ToDocsLogisticos"; 
-				*/
-				debugger;
-
-				var sFilters = new Array();
-
-				//				var sQuery = "";
-
+			if (vCantSel === 1) {
 				for (var i = 0; i < aSelectedData.length; i++) {
-
-					//					if (i >= 1 ) {
-					//						sQuery = sQuery + ' or ';
-					//					}
-
-					var vFilterKey = aSelectedData[i].bukrs + aSelectedData[i].belnr + aSelectedData[i].gjahr + aSelectedData[i].blart;
-					//					sQuery = sQuery + "filterKey eq '" + vFilterKey + "\'";
-
-					var oFilter = new sap.ui.model.Filter({
-						path: "filterKey",
-						operator: sap.ui.model.FilterOperator.EQ,
-						value1: vFilterKey
-					});
-
-					sFilters.push(oFilter);
-
+					var logistic = {};
+					logistic.belnr = aSelectedData[i].belnr;
+					logistic.gjahr = aSelectedData[i].gjahr;
+					logistic.buzei = aSelectedData[i].buzei;
+					logistic.bukrs = aSelectedData[i].bukrs;
+					logistic.blart = aSelectedData[i].blart;
 				}
-				var sPath = "/DocsLogisticosSet";
+
+				var sPath = "/PartidasSet(belnr='" + logistic.belnr + "\'," +
+					"gjahr='" + logistic.gjahr + "\'," +
+					"buzei='" + logistic.buzei + "\'," +
+					"bukrs='" + logistic.bukrs + "\'," +
+					"blart='" + logistic.blart + "')/ToDocsLogisticos";
 
 				var sthis = this;
-				
-				BusyIndicator.show();
-				
 				oModelLog.read(sPath, {
-					filters: sFilters,
 					success: function(oData) {
 						var logisticJson = new JSONModel(oData);
 						sthis.setModel(logisticJson, "oModelLog");
-						BusyIndicator.hide();
 					},
 					error: function() {
-						BusyIndicator.hide();
 						this.fnErrorLog.bind(this);
-						
 					}
 				});
 
@@ -473,9 +422,9 @@ sap.ui.define([
 
 		// Boton "Generar Factura de Cliente"
 		onBtnFc: function(oEvent) {
-
+			
 			var oThis = this;
-
+			
 			var newData = {};
 			newData.ToDocsLogisticos = [];
 			var logisticos = [];
@@ -641,9 +590,9 @@ sap.ui.define([
 
 		//
 		fnAnularPartidas: function(sText) {
-
+			
 			var oThis = this;
-
+			
 			var newData = {};
 			newData.ToDocsLogisticos = [];
 			var logisticos = [];
@@ -717,7 +666,7 @@ sap.ui.define([
 
 		//Boton contabilizar Nota de Credito
 		onBtnContab: function() {
-
+			
 			var oThis = this;
 			var oModel = this.getModel();
 			var oHeaderData = this.getModel("HeaderData");
@@ -729,7 +678,6 @@ sap.ui.define([
 				timbrado: oHeaderData.getProperty("/timbrado"),
 				bldat: oHeaderData.getProperty("/bldat") || ""
 			};
-
 
 			oModel.callFunction("/Timbrado", {
 				method: "GET",
@@ -784,7 +732,7 @@ sap.ui.define([
 								sMessage, {
 									icon: sap.m.MessageBox.Icon.INFORMATION,
 									title: "Solicitud de nota de Credito",
-									onClose: oThis.onClose.bind(oThis),
+									onClose: oThis.onClose.bind(oThis) ,
 									actions: aActions,
 									initialFocus: "Cancelar"
 								}
@@ -879,7 +827,7 @@ sap.ui.define([
 
 		//
 		onClose: function(oAction) {
-
+			
 			var oThis = this;
 
 			if (oAction === "Cancelar") {
@@ -913,7 +861,7 @@ sap.ui.define([
 						});
 
 						break;
-
+						
 					case "Generar SNC":
 						// Genera NC, genera SNC por la diferencia
 						newDocument.proceso = "5";
@@ -927,12 +875,12 @@ sap.ui.define([
 					case "Continuar":
 						// Genera NC, no importa la diferencia
 						newDocument.proceso = "6";
-
+						
 						oModel.create("/DocheaderSet", newDocument, {
 							success: this.fnSuccessNc.bind(this),
 							error: this.fnErrorNc.bind(this)
 						});
-
+						
 						break;
 				}
 				//
@@ -946,7 +894,7 @@ sap.ui.define([
 			this._partidasRefresh();
 		},
 
-		// 
+		//&nbsp;
 		fnErrorNc: function(oError) {
 			sap.m.MessageBox.error("ERROR al procesar NC de Proveedor, Revisar el log");
 		},
@@ -1366,7 +1314,7 @@ sap.ui.define([
 		},
 
 		//---------------------------------------
-		// Internal Methods 
+		// Internal Methods&nbsp;
 		//---------------------------------------
 
 		_checkObligatoryFields: function() {
@@ -1568,7 +1516,7 @@ sap.ui.define([
 		//Actualiza el estado de los datos en la vista
 		_updateDocData: function() {
 			var iLen = this.getModel("controlModel").getData().cantSele;
-			//Si no hay items seleccionados 
+			//Si no hay items seleccionados&nbsp;
 			if (iLen === 0) {
 				var oGrid = this.byId("id_griddoc");
 				var oGridLog = this.byId("id_gridlog");
@@ -1589,7 +1537,7 @@ sap.ui.define([
 			}
 		},
 
-		// 
+		//&nbsp;
 		_partidasRefresh: function() {
 			this.byId("lineItemsList").getBinding("items").refresh(true);
 			this._updateSelectedData("SelectedData", null, true);
@@ -1813,7 +1761,7 @@ sap.ui.define([
 			}
 		},
 
-		// Calcula total de Items ingresados manualmente 
+		// Calcula total de Items ingresados manualmente&nbsp;
 		_calcularTotalItems: function() {
 			var oModelItems = this.getModel("ItemsData");
 			var oDataItems = oModelItems.getData();
@@ -1851,7 +1799,7 @@ sap.ui.define([
 			var iWrbtrTot = 0;
 			var iWrbtr = 0;
 
-			if (aDataSelec >= 1) {
+			if (aDataSelec === 1) {
 				for (var i = 0; i < aDataSel.length; i++) {
 					iWrbtr = aDataSel[i].valor_nc * 1;
 					iWrbtrTot = iWrbtrTot + iWrbtr;
@@ -1869,7 +1817,7 @@ sap.ui.define([
 		_calcularCantidadSeleccionadoLog: function() {
 			var aDataSelec = this.getModel("SelectedData").getData().Items.length;
 
-			if (aDataSelec >= 1) {
+			if (aDataSelec === 1) {
 				return this.getModel("LogisticData").getData().Items.length;
 			} else {
 				return 0;
