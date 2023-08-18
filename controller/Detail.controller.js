@@ -1,4 +1,5 @@
 /*global location */
+/*master Branch*/
 sap.ui.define([
 	"zfisncv2/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
@@ -352,7 +353,7 @@ sap.ui.define([
 				press: "onPressGroup"
 			});
 		},
-		
+
 		onPressGroup: function(oEvent) {
 			debugger;
 		},
@@ -440,9 +441,9 @@ sap.ui.define([
 				var sPath = "/DocsLogisticosSet";
 
 				var sthis = this;
-				
+
 				BusyIndicator.show();
-				
+
 				oModelLog.read(sPath, {
 					filters: sFilters,
 					success: function(oData) {
@@ -453,7 +454,7 @@ sap.ui.define([
 					error: function() {
 						BusyIndicator.hide();
 						this.fnErrorLog.bind(this);
-						
+
 					}
 				});
 
@@ -730,73 +731,81 @@ sap.ui.define([
 				bldat: oHeaderData.getProperty("/bldat") || ""
 			};
 
+			var bPath = "/BloqueadoSet(Bukrs=" + "'" + aSelectedData[0].bukrs + "'," + "Konko=" + "'" + aSelectedData[0].lifnr + "')";
+			oModel.read(bPath, {
+				success: function(oData) {
+					if (!oData.Block) {
+						oModel.callFunction("/Timbrado", {
+							method: "GET",
+							urlParameters: mParameters,
+							success: function(oData, oResponse) {
+								if (oResponse.data.type === "I") {
 
-			oModel.callFunction("/Timbrado", {
-				method: "GET",
-				urlParameters: mParameters,
-				success: function(oData, oResponse) {
-					if (oResponse.data.type === "I") {
+									// Campos Obligatorios
+									var sField = oThis._checkObligatoryFields();
 
-						// Campos Obligatorios
-						var sField = oThis._checkObligatoryFields();
+									// Verificacion de Datos obligatorios
+									if (sField !== "OK") {
 
-						// Verificacion de Datos obligatorios
-						if (sField !== "OK") {
+										sap.m.MessageBox.error("Ingrese todos los campos obligatorios:", {
+											details: "Revisar: " + "(" + sField + ")" +
+												", Importe" +
+												", Fe.Contabilizacion" +
+												", Fe.Documento" +
+												", Periodo" +
+												", Moneda" +
+												", Clase de Documento" +
+												", Referencia" +
+												", Condicion de Pago" +
+												", Timbrado" +
+												", Indicador de Impuestos"
+										});
 
-							sap.m.MessageBox.error("Ingrese todos los campos obligatorios:", {
-								details: "Revisar: " + "(" + sField + ")" +
-									", Importe" +
-									", Fe.Contabilizacion" +
-									", Fe.Documento" +
-									", Periodo" +
-									", Moneda" +
-									", Clase de Documento" +
-									", Referencia" +
-									", Condicion de Pago" +
-									", Timbrado" +
-									", Indicador de Impuestos"
-							});
+									} else {
 
-						} else {
+										var aActions = [];
+										var sMessage = "";
+										// var sDifParam = this.getModel("ControlData").getProperty("/dif");
+										// var iDifParam = sDifParam * 1; //Parametro diferencia
+										// var iWrbtrSeleAbs = Math.abs(iWrbtrSele); // Total seleccionado
+										// var iWrbtrDif = iWrbtr - iWrbtrSeleAbs; // Diferencia entre Total seleccionado y el Asiento
+										// var iWrbtrDifAbs = Math.abs(iWrbtrDif); // Diferencia en valor absoluto
+										var aImports = oThis.fnCallImports();
 
-							var aActions = [];
-							var sMessage = "";
-							// var sDifParam = this.getModel("ControlData").getProperty("/dif");
-							// var iDifParam = sDifParam * 1; //Parametro diferencia
-							// var iWrbtrSeleAbs = Math.abs(iWrbtrSele); // Total seleccionado
-							// var iWrbtrDif = iWrbtr - iWrbtrSeleAbs; // Diferencia entre Total seleccionado y el Asiento
-							// var iWrbtrDifAbs = Math.abs(iWrbtrDif); // Diferencia en valor absoluto
-							var aImports = oThis.fnCallImports();
+										/*if( iWrbtr !== Math.abs(iWrbtrSele) ) {*/
+										// if (iWrbtrDifAbs >= iDifParam) {
+										if (aImports.vStatus === "2") {
+											aActions = ["Generar Factura", "Generar SNC", "Continuar", "Cancelar"];
+											sMessage = "El importe ingresado no es igual al de la Solicitud de Nota de Crédito" +
+												": " + aImports.vTotSinIvaNC + " < " + aImports.vTotImport + " (" + aImports.vDifeToleran + ")";
+											// ": " + iWrbtr + " <> " + iWrbtrSele + " (" + iDifParam + ")";
+										} else {
+											aActions = ["Continuar", "Cancelar"];
+											sMessage = "Va a Contabilizar NC de Proveedor";
+										}
 
-							/*if( iWrbtr !== Math.abs(iWrbtrSele) ) {*/
-							// if (iWrbtrDifAbs >= iDifParam) {
-							if (aImports.vStatus === "2") {
-								aActions = ["Generar Factura", "Generar SNC", "Continuar", "Cancelar"];
-								sMessage = "El importe ingresado no es igual al de la Solicitud de Nota de Crédito" +
-									": " + aImports.vTotSinIvaNC + " < " + aImports.vTotImport + " (" + aImports.vDifeToleran + ")";
-								// ": " + iWrbtr + " <> " + iWrbtrSele + " (" + iDifParam + ")";
-							} else {
-								aActions = ["Continuar", "Cancelar"];
-								sMessage = "Va a Contabilizar NC de Proveedor";
-							}
+										sap.m.MessageBox.show(
+											sMessage, {
+												icon: sap.m.MessageBox.Icon.INFORMATION,
+												title: "Solicitud de nota de Credito",
+												onClose: oThis.onClose.bind(oThis),
+												actions: aActions,
+												initialFocus: "Cancelar"
+											}
+										);
+									}
 
-							sap.m.MessageBox.show(
-								sMessage, {
-									icon: sap.m.MessageBox.Icon.INFORMATION,
-									title: "Solicitud de nota de Credito",
-									onClose: oThis.onClose.bind(oThis),
-									actions: aActions,
-									initialFocus: "Cancelar"
+								} else {
+									sap.m.MessageBox.error(oResponse.data.message);
 								}
-							);
-						}
-
+							},
+							error: function(oData, oResponse) {
+								sap.m.MessageBox.error("No se puede verificar el timbrado");
+							}
+						});
 					} else {
-						sap.m.MessageBox.error(oResponse.data.message);
+						sap.m.MessageBox.error(oData.Messg);
 					}
-				},
-				error: function(oData, oResponse) {
-					sap.m.MessageBox.error("No se puede verificar el timbrado");
 				}
 			});
 
