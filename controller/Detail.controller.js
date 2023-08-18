@@ -680,7 +680,6 @@ sap.ui.define([
 						};
 
 						var bPath = "/BloqueadoSet(Bukrs=" + "'" + aSelectedData[0].bukrs + "'," + "Konko=" + "'" + aSelectedData[0].lifnr + "')";
-
 						oModel.read(bPath, {
 									success: function(oData) {
 										if (!oData.Block) {
