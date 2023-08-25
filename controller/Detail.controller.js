@@ -383,6 +383,8 @@ sap.ui.define([
 		onBtnRefresh: function() {
 			this._partidasRefresh();
 		},
+		
+
 
 		// Boton "Detalle Logistico"
 		onBtnDl: function(oEvent) {
@@ -397,7 +399,8 @@ sap.ui.define([
 			var oControlModelLog = this._createControlModelLog();
 			this.setModel(oControlModelLog, "controlModelLog");
 
-			if (vCantSel >= 1) {
+			if (vCantSel >= 1 && this.validateSelection(aSelectedData) ) {
+			
 
 				/*				for (var i = 0; i < aSelectedData.length; i++) {
 									var logistic = {};
@@ -461,6 +464,25 @@ sap.ui.define([
 				oGrid.setVisible(true);
 				this._updateButtons2(false, false, false, false, false);
 			}
+			else { 	sap.m.MessageBox.error("Seleccione una única clase de documento"); }
+		},
+		
+	validateSelection: function(aSelection)
+		{
+			var vReturn = true;
+			var vFirstValue = aSelection[0].blart;
+			
+				for (var i = 1; i < aSelection.length; i++) {
+				
+					if ( aSelection[i].blart !== vFirstValue )
+					{
+						vReturn = false;
+					}
+					
+				}
+				
+			return 	vReturn;
+			
 		},
 
 		fnSuccessLog: function(oData, oResponse) {
@@ -724,6 +746,7 @@ sap.ui.define([
 			var oHeaderData = this.getModel("HeaderData");
 			var aSelectedData = this.getModel("SelectedData").getData().Items;
 
+
 			var mParameters = {
 				lifnr: aSelectedData[0].lifnr,
 				blart: oHeaderData.getProperty("/blart"),
@@ -735,74 +758,94 @@ sap.ui.define([
 			oModel.read(bPath, {
 				success: function(oData) {
 					if (!oData.Block) {
-						oModel.callFunction("/Timbrado", {
-							method: "GET",
-							urlParameters: mParameters,
-							success: function(oData, oResponse) {
-								if (oResponse.data.type === "I") {
 
-									// Campos Obligatorios
-									var sField = oThis._checkObligatoryFields();
+						bPath = "/TimbradoRefSet(Bukrs=" + "'" + aSelectedData[0].bukrs + "'," 
+								+ "Xblnr=" + "'" + oHeaderData.getProperty("/xblnr") + "'," 
+								+ "Timbrado=" + "'" + oHeaderData.getProperty("/timbrado") + "')" ;
+								
+						oModel.read(bPath, {
+							success: function(oDataRef, oResponse) {
+								if (!oDataRef.Exist) {
+									
+									oModel.callFunction("/Timbrado", {
+										method: "GET",
+										urlParameters: mParameters,
+										success: function(oData, oResponse) {
+											if (oResponse.data.type === "I") {
 
-									// Verificacion de Datos obligatorios
-									if (sField !== "OK") {
+												// Campos Obligatorios
+												var sField = oThis._checkObligatoryFields();
 
-										sap.m.MessageBox.error("Ingrese todos los campos obligatorios:", {
-											details: "Revisar: " + "(" + sField + ")" +
-												", Importe" +
-												", Fe.Contabilizacion" +
-												", Fe.Documento" +
-												", Periodo" +
-												", Moneda" +
-												", Clase de Documento" +
-												", Referencia" +
-												", Condicion de Pago" +
-												", Timbrado" +
-												", Indicador de Impuestos"
-										});
+												// Verificacion de Datos obligatorios
+												if (sField !== "OK") {
 
-									} else {
+													sap.m.MessageBox.error("Ingrese todos los campos obligatorios:", {
+														details: "Revisar: " + "(" + sField + ")" +
+															", Importe" +
+															", Fe.Contabilizacion" +
+															", Fe.Documento" +
+															", Periodo" +
+															", Moneda" +
+															", Clase de Documento" +
+															", Referencia" +
+															", Condicion de Pago" +
+															", Timbrado" +
+															", Indicador de Impuestos"
+													});
 
-										var aActions = [];
-										var sMessage = "";
-										// var sDifParam = this.getModel("ControlData").getProperty("/dif");
-										// var iDifParam = sDifParam * 1; //Parametro diferencia
-										// var iWrbtrSeleAbs = Math.abs(iWrbtrSele); // Total seleccionado
-										// var iWrbtrDif = iWrbtr - iWrbtrSeleAbs; // Diferencia entre Total seleccionado y el Asiento
-										// var iWrbtrDifAbs = Math.abs(iWrbtrDif); // Diferencia en valor absoluto
-										var aImports = oThis.fnCallImports();
+												} else {
 
-										/*if( iWrbtr !== Math.abs(iWrbtrSele) ) {*/
-										// if (iWrbtrDifAbs >= iDifParam) {
-										if (aImports.vStatus === "2") {
-											aActions = ["Generar Factura", "Generar SNC", "Continuar", "Cancelar"];
-											sMessage = "El importe ingresado no es igual al de la Solicitud de Nota de Crédito" +
-												": " + aImports.vTotSinIvaNC + " < " + aImports.vTotImport + " (" + aImports.vDifeToleran + ")";
-											// ": " + iWrbtr + " <> " + iWrbtrSele + " (" + iDifParam + ")";
-										} else {
-											aActions = ["Continuar", "Cancelar"];
-											sMessage = "Va a Contabilizar NC de Proveedor";
-										}
+													var aActions = [];
+													var sMessage = "";
+													// var sDifParam = this.getModel("ControlData").getProperty("/dif");
+													// var iDifParam = sDifParam * 1; //Parametro diferencia
+													// var iWrbtrSeleAbs = Math.abs(iWrbtrSele); // Total seleccionado
+													// var iWrbtrDif = iWrbtr - iWrbtrSeleAbs; // Diferencia entre Total seleccionado y el Asiento
+													// var iWrbtrDifAbs = Math.abs(iWrbtrDif); // Diferencia en valor absoluto
+													var aImports = oThis.fnCallImports();
 
-										sap.m.MessageBox.show(
-											sMessage, {
-												icon: sap.m.MessageBox.Icon.INFORMATION,
-												title: "Solicitud de nota de Credito",
-												onClose: oThis.onClose.bind(oThis),
-												actions: aActions,
-												initialFocus: "Cancelar"
+													/*if( iWrbtr !== Math.abs(iWrbtrSele) ) {*/
+													// if (iWrbtrDifAbs >= iDifParam) {
+													if (aImports.vStatus === "2") {
+														aActions = ["Generar Factura", "Generar SNC", "Continuar", "Cancelar"];
+														sMessage = "El importe ingresado no es igual al de la Solicitud de Nota de Crédito" +
+															": " + aImports.vTotSinIvaNC + " < " + aImports.vTotImport + " (" + aImports.vDifeToleran + ")";
+														// ": " + iWrbtr + " <> " + iWrbtrSele + " (" + iDifParam + ")";
+													} else {
+														aActions = ["Continuar", "Cancelar"];
+														sMessage = "Va a Contabilizar NC de Proveedor";
+													}
+
+													sap.m.MessageBox.show(
+														sMessage, {
+															icon: sap.m.MessageBox.Icon.INFORMATION,
+															title: "Solicitud de nota de Credito",
+															onClose: oThis.onClose.bind(oThis),
+															actions: aActions,
+															initialFocus: "Cancelar"
+														}
+													);
+												}
+
+											} else {
+												sap.m.MessageBox.error(oResponse.data.message);
 											}
-										);
-									}
+										},
+										error: function(oData) {
+											sap.m.MessageBox.error("No se puede verificar el timbrado");
+										}
+									});
 
 								} else {
-									sap.m.MessageBox.error(oResponse.data.message);
+									sap.m.MessageBox.error(oDataRef.Messg);
 								}
 							},
-							error: function(oData, oResponse) {
-								sap.m.MessageBox.error("No se puede verificar el timbrado");
+							error: function(oDataRef, oResponse){
+								oThis.fnErrorLog.bind(oThis);
 							}
+
 						});
+
 					} else {
 						sap.m.MessageBox.error(oData.Messg);
 					}
