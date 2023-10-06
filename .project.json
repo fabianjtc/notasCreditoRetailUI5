@@ -15,7 +15,7 @@
     "com.watt.common.builder.sapui5clientbuild"
   ],
   "build": {
-    "buildRequired": false,
+    "buildRequired": true,
     "targetFolder": "dist",
     "lastBuildDateTime": "Fri, 25 Aug 2023 21:04:03 GMT"
   },

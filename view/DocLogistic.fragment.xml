@@ -3,7 +3,7 @@
 		<Table id="lineItemsListLog" growing="true" growingScrollToLoad="true" growingThreshold="30"
 			footerText="{i18n>cantDocsTxt} {controlModelLog>/cantSeleLog}" noDataText="{i18n>detailLineItemTableNoDataTextLog}"
 			busyIndicatorDelay="{oModelLog>/lineItemTableDelayLog}" class="sapUiResponsiveMargin" mode="MultiSelect" selectionChange="onSelectionChangeLog"
-			items="{ path: 'oModelLog>/results', sorter: { path: 'buzei', descending: false, group: '.getGroup' }, groupHeaderFactory: '.getGroupHeader' }">
+			items="{ path: 'oModelLog>/results', sorter: { path: 'belnr', descending: false, group: '.getGroup' }, groupHeaderFactory: '.getGroupHeader' }">
 			<headerToolbar>
 				<Toolbar id="lineItemsToolbarLog">
 					<Button tooltip="Ordenar" icon="sap-icon://sort" press="onBtnSortDocsLog"/>
