@@ -2,8 +2,8 @@
 	<ScrollContainer height="50%" width="100%" horizontal="true" vertical="true" focusable="true">
 		<Table id="lineItemsListLog" growing="true" growingScrollToLoad="true" growingThreshold="30"
 			footerText="{i18n>cantDocsTxt} {controlModelLog>/cantSeleLog}" noDataText="{i18n>detailLineItemTableNoDataTextLog}"
-			busyIndicatorDelay="{oModelLog>/lineItemTableDelayLog}" class="sapUiResponsiveMargin" mode="MultiSelect" selectionChange="onSelectionChangeLog"
-			items="{ path: 'oModelLog>/results', sorter: { path: 'belnr', descending: false, group: '.getGroup' }, groupHeaderFactory: '.getGroupHeader' }">
+			busyIndicatorDelay="{oModelLog>/lineItemTableDelayLog}" class="sapUiResponsiveMargin" mode="MultiSelect"
+			selectionChange="onSelectionChangeLog" items="{ path: 'oModelLog>/results', sorter: { path: 'belnr', descending: false} }">
 			<headerToolbar>
 				<Toolbar id="lineItemsToolbarLog">
 					<Button tooltip="Ordenar" icon="sap-icon://sort" press="onBtnSortDocsLog"/>
@@ -20,8 +20,8 @@
 				<Column visible="false">
 					<Text text="bukrs"/>
 				</Column>
-				<Column visible="false">
-					<Text text="belnr"/>
+				<Column width="9em">
+					<Text text="{i18n>belnrTxt}"/>
 				</Column>
 				<Column visible="false">
 					<Text text="gjahr"/>
@@ -65,30 +65,24 @@
 						<Text text="{oModelLog>gjahr}"/>
 						<ObjectIdentifier title="{path: 'oModelLog>buzei' , formatter: '.formatter.buzeiValue' }"/>
 						<ObjectIdentifier title="{oModelLog>ean11}"/>
-						<ObjectNumber
-							number="{ path: 'oModelLog>bpmng' , type: 'sap.ui.model.type.Integer' }" 
-							unit="{oModelLog>bprme}"/>
+						<ObjectNumber number="{ path: 'oModelLog>bpmng' , type: 'sap.ui.model.type.Integer' }" unit="{oModelLog>bprme}"/>
 						<Text text="{oModelLog>txz01}"/>
 						<ObjectNumber
 							number="{ parts: [{path: 'oModelLog>netpr'}, {path: 'oModelLog>waers'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
 							unit="{oModelLog>waers}"/>
 						<ObjectNumber
 							number="{ parts: [{path: 'oModelLog>netwr'}, {path: 'oModelLog>waers'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
-							unit="{oModelLog>waers}"/>	
+							unit="{oModelLog>waers}"/>
 						<ObjectNumber
-							number="{ path: 'oModelLog>menge' , type: 'sap.ui.model.type.Float', formatOptions: {	maxFractionDigits: 2,
-																													preserveDecimals: false } }"
+							number="{ path: 'oModelLog>menge' , type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2, preserveDecimals: false } }"
 							unit="{oModelLog>bstme}"/>
 						<Text text="{oModelLog>mwskz}"/>
 						<Input
-							value="{ path: 'oModelLog>menge_nc' , type: 'sap.ui.model.type.Float', formatOptions: {	maxFractionDigits: 2,
-																													preserveDecimals: false } }"
-							unit="{oModelLog>bstme}"
-							liveChange="onLiveMenge"/>
+							value="{ path: 'oModelLog>menge_nc' , type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2, preserveDecimals: false } }"
+							unit="{oModelLog>bstme}" liveChange="onLiveMenge"/>
 						<Input
 							value="{ parts: [{path: 'oModelLog>valor_nc'}, {path: 'oModelLog>waers'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
-							unit="{oModelLog>waers}"
-							liveChange="onLiveChange"/>
+							unit="{oModelLog>waers}" liveChange="onLiveChange"/>
 					</cells>
 				</ColumnListItem>
 			</items>

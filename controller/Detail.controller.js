@@ -207,12 +207,13 @@ sap.ui.define([
 
 		onSelectionChangeLog: function(oEvent) {
 			var bSelected = oEvent.getParameter("selected");
+			var bSelectedAll = oEvent.getParameter("selectAll");
 			var oItems = oEvent.getParameter("listItems");
 			var i = 0;
 			var oGrid = this.byId("id_griddoc");
 			var sPath = "";
 
-			if (bSelected) {
+			if (bSelected || bSelectedAll) {
 				for (i = 0; i < oItems.length; i++) {
 					sPath = oItems[i].getBindingContextPath();
 					var oItem = this.getModel("oModelLog").getProperty(sPath);
@@ -383,8 +384,6 @@ sap.ui.define([
 		onBtnRefresh: function() {
 			this._partidasRefresh();
 		},
-		
-
 
 		// Boton "Detalle Logistico"
 		onBtnDl: function(oEvent) {
@@ -399,8 +398,7 @@ sap.ui.define([
 			var oControlModelLog = this._createControlModelLog();
 			this.setModel(oControlModelLog, "controlModelLog");
 
-			if (vCantSel >= 1 && this.validateSelection(aSelectedData) ) {
-			
+			if (vCantSel >= 1 && this.validateSelection(aSelectedData)) {
 
 				/*				for (var i = 0; i < aSelectedData.length; i++) {
 									var logistic = {};
@@ -417,7 +415,6 @@ sap.ui.define([
 									"bukrs='" + logistic.bukrs + "\'," +
 									"blart='" + logistic.blart + "')/ToDocsLogisticos"; 
 				*/
-				debugger;
 
 				var sFilters = new Array();
 
@@ -463,26 +460,25 @@ sap.ui.define([
 
 				oGrid.setVisible(true);
 				this._updateButtons2(false, false, false, false, false);
+			} else {
+				sap.m.MessageBox.error("Seleccione una única clase de documento");
 			}
-			else { 	sap.m.MessageBox.error("Seleccione una única clase de documento"); }
 		},
-		
-	validateSelection: function(aSelection)
-		{
+
+		validateSelection: function(aSelection) {
 			var vReturn = true;
 			var vFirstValue = aSelection[0].blart;
-			
-				for (var i = 1; i < aSelection.length; i++) {
-				
-					if ( aSelection[i].blart !== vFirstValue )
-					{
-						vReturn = false;
-					}
-					
+
+			for (var i = 1; i < aSelection.length; i++) {
+
+				if (aSelection[i].blart !== vFirstValue) {
+					vReturn = false;
 				}
-				
-			return 	vReturn;
-			
+
+			}
+
+			return vReturn;
+
 		},
 
 		fnSuccessLog: function(oData, oResponse) {
@@ -509,6 +505,9 @@ sap.ui.define([
 			var vCantSel = aSelectedData.length;
 
 			if (oTable.length === aLogisticData.length) {
+
+				debugger;
+
 				if (vCantSel === 1) {
 					for (var i = 0; i < aSelectedData.length; i++) {
 						newData.lifnr = aSelectedData[i].lifnr;
@@ -606,6 +605,7 @@ sap.ui.define([
 
 		addItems: function() {
 			var aLogisticData = this.getModel("LogisticData").getData().Items;
+			//aLogisticData = aLogisticData.filter(Boolean);
 			var iItemPos = parseInt(this._getLastItemPos(), 10);
 			iItemPos += 10;
 			var vTotC2 = 0;
@@ -746,7 +746,6 @@ sap.ui.define([
 			var oHeaderData = this.getModel("HeaderData");
 			var aSelectedData = this.getModel("SelectedData").getData().Items;
 
-
 			var mParameters = {
 				lifnr: aSelectedData[0].lifnr,
 				blart: oHeaderData.getProperty("/blart"),
@@ -759,14 +758,13 @@ sap.ui.define([
 				success: function(oData) {
 					if (!oData.Block) {
 
-						bPath = "/TimbradoRefSet(Bukrs=" + "'" + aSelectedData[0].bukrs + "'," 
-								+ "Xblnr=" + "'" + oHeaderData.getProperty("/xblnr") + "'," 
-								+ "Timbrado=" + "'" + oHeaderData.getProperty("/timbrado") + "')" ;
-								
+						bPath = "/TimbradoRefSet(Bukrs=" + "'" + aSelectedData[0].bukrs + "'," + "Xblnr=" + "'" + oHeaderData.getProperty("/xblnr") +
+							"'," + "Timbrado=" + "'" + oHeaderData.getProperty("/timbrado") + "')";
+
 						oModel.read(bPath, {
 							success: function(oDataRef, oResponse) {
 								if (!oDataRef.Exist) {
-									
+
 									oModel.callFunction("/Timbrado", {
 										method: "GET",
 										urlParameters: mParameters,
@@ -840,7 +838,7 @@ sap.ui.define([
 									sap.m.MessageBox.error(oDataRef.Messg);
 								}
 							},
-							error: function(oDataRef, oResponse){
+							error: function(oDataRef, oResponse) {
 								oThis.fnErrorLog.bind(oThis);
 							}
 
@@ -872,6 +870,7 @@ sap.ui.define([
 		//Determinar si es mayor o menor valor
 		fnCallImports: function() {
 			var aLogisticData = this.getModel("LogisticData").getData().Items;
+			aLogisticData = aLogisticData.filter(Boolean);
 			// var aSelectedData = this.getModel("SelectedData").getData().Items;
 			// var oTable = this.getView().byId("lineItemsListLog");
 			var oModelLog = this.getModel("oModelLog").getData().results;
@@ -882,6 +881,7 @@ sap.ui.define([
 			var vStatus = 0;
 			var vDifeToleran = 0;
 			var vValor_nc;
+			
 
 			for (var i = 0; i < oModelLog.length; i++) {
 				vValor_nc = oModelLog[i].valor_nc;
@@ -1506,6 +1506,11 @@ sap.ui.define([
 			if (sMwskz === "N") {
 				return "Indicador de Impuesto";
 			}
+			
+			if(sBldat !== sBudat){
+				return 'Fechas difetentes'
+			}
+			
 			return "OK";
 		},
 
@@ -1780,6 +1785,7 @@ sap.ui.define([
 			var oModel = this.getModel("LogisticData");
 			var oData = oModel.getData();
 			var aData = oData.Items;
+			//aData = aData.filter(Boolean);
 			var i = 0;
 
 			if (sPath && bDelete) {
@@ -1790,8 +1796,12 @@ sap.ui.define([
 				} else {
 					//Delete entry
 					for (i = 0; i < aData.length; i++) {
-						if (aData[i].ean11 === data.ean11) {
-							aData.splice(i, 1);
+						if (aData[i] != null) {
+
+							if (aData[i].ean11 === data.ean11) {
+								aData.splice(i, 1);
+							}
+
 						}
 					}
 					oModel.setData(oData);
@@ -1898,16 +1908,33 @@ sap.ui.define([
 		//Calcula el Valor NC total de las posiciones logisticas seleccionadas
 		_calcularTotalSeleccionadoLog: function() {
 			//Calcular total de posiciones logisticas seleccionadas
+			var aTableV 	   = this.getView().byId('lineItemsListLog');
+			var aTableBindings = aTableV.getBinding("items");
+			var aTablePaths    = aTableV._aSelectedPaths;
+			
+			
+			
 			var aDataSel = this.getModel("LogisticData").getData().Items;
+			aDataSel = aDataSel.filter(Boolean);
 			var aDataSelec = this.getModel("SelectedData").getData().Items.length;
 			var iWrbtrTot = 0;
 			var iWrbtr = 0;
 
 			if (aDataSelec >= 1) {
-				for (var i = 0; i < aDataSel.length; i++) {
-					iWrbtr = aDataSel[i].valor_nc * 1;
+				
+				for (var i=0; i<aTablePaths.length; i++) {
+					var value = aTablePaths[i];
+					var index = value.split('/')[2];
+					
+					iWrbtr = aTableBindings.oList[index].valor_nc * 1;
+					
 					iWrbtrTot = iWrbtrTot + iWrbtr;
 				}
+			
+				/*for (var i = 0; i < aDataSel.length; i++) {
+					iWrbtr = aDataSel[i].valor_nc * 1;
+					iWrbtrTot = iWrbtrTot + iWrbtr;
+				}*/
 			}
 			return iWrbtrTot;
 		},
@@ -1919,12 +1946,19 @@ sap.ui.define([
 
 		//Calcula la cantidad de docs logisticos seleccionados
 		_calcularCantidadSeleccionadoLog: function() {
+			
+			var aTableV = this.getView().byId('lineItemsListLog');
+			
 			var aDataSelec = this.getModel("SelectedData").getData().Items.length;
 
 			if (aDataSelec >= 1) {
-				return this.getModel("LogisticData").getData().Items.length;
+				
+				return aTableV._aSelectedPaths.length;
+				
 			} else {
+				
 				return 0;
+				
 			}
 		},
 
@@ -1947,7 +1981,7 @@ sap.ui.define([
 			var oControl = this.getModel("controlModelLog");
 			oControl.setProperty("/wrbtrTotLog", this._calcularTotalSeleccionadoLog());
 			oControl.setProperty("/cantSeleLog", this._calcularCantidadSeleccionadoLog());
-			oControl.setProperty("/waers", (aDataSel.length > 0 ? aDataSel[0].waers : "PYG"));
+			//oControl.setProperty("/waers", (aDataSel.length > 0 ? aDataSel[0].waers : "PYG"));
 		},
 
 		// Arma el documento a generar, cabecera y posiciones
