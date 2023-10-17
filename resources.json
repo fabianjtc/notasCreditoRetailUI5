@@ -1,128 +1,67 @@
 {
     "resources": [
         {
-            "name": "neo-app.json"
-        },
-        {
-            "name": "extended_runnable_file.html"
-        },
-        {
-            "name": "model/VendorData.json"
-        },
-        {
-            "name": "model/HeaderData.json"
-        },
-        {
-            "name": "model/LogisticData.json"
-        },
-        {
-            "name": "model/models.js"
-        },
-        {
-            "name": "model/ControlData.json"
-        },
-        {
-            "name": "model/SelectedData.json"
-        },
-        {
-            "name": "model/ItemsData.json"
-        },
-        {
-            "name": "model/formatter.js"
-        },
-        {
-            "name": "view/ValueHelpHktid.fragment.xml"
-        },
-        {
-            "name": "view/Detail.view.xml"
-        },
-        {
-            "name": "view/Master.view.xml"
-        },
-        {
-            "name": "view/Partidas.fragment.xml"
-        },
-        {
-            "name": "view/ValueHelpAufnr.fragment.xml"
-        },
-        {
-            "name": "view/DocHeader.fragment.xml"
-        },
-        {
-            "name": "view/NotFound.view.xml"
-        },
-        {
-            "name": "view/DocItems.fragment.xml"
-        },
-        {
-            "name": "view/ValueHelpWaers.fragment.xml"
-        },
-        {
-            "name": "view/ValueHelpHbkid.fragment.xml"
-        },
-        {
-            "name": "view/DetailNoObjectsAvailable.view.xml"
-        },
-        {
-            "name": "view/ValueHelpSgtxt.fragment.xml"
-        },
-        {
-            "name": "view/DocLogistic.fragment.xml"
-        },
-        {
-            "name": "view/TableSettings.fragment.xml"
-        },
-        {
-            "name": "view/LogApp.view.xml"
-        },
-        {
-            "name": "view/App.view.xml"
-        },
-        {
-            "name": "view/ValueHelpPrctr.fragment.xml"
-        },
-        {
-            "name": "view/DetailObjectNotFound.view.xml"
-        },
-        {
-            "name": "view/SortDocsLogistics.fragment.xml"
-        },
-        {
-            "name": "view/ValueHelpKostl.fragment.xml"
-        },
-        {
-            "name": "view/DocVendor.fragment.xml"
-        },
-        {
-            "name": "view/ValueHelpSegment.fragment.xml"
-        },
-        {
-            "name": "view/ViewSettingsDialog.fragment.xml"
-        },
-        {
             "name": "manifest.json"
         },
         {
-            "name": "resources.json",
-            "merged": true
+            "name": "localService/mockserver.js"
         },
         {
-            "name": ".project.json"
+            "name": "localService/mockdata/IndImpSet.json"
         },
         {
-            "name": "controller/LogApp.controller.js"
+            "name": "localService/mockdata/ClaseDocSet.json"
+        },
+        {
+            "name": "localService/mockdata/CeCoSet.json"
+        },
+        {
+            "name": "localService/mockdata/SociedadSet.json"
+        },
+        {
+            "name": "localService/mockdata/TextCabSet.json"
+        },
+        {
+            "name": "localService/mockdata/PartidasSet.json"
+        },
+        {
+            "name": "localService/mockdata/DocitemsSet.json"
+        },
+        {
+            "name": "localService/mockdata/DocheaderSet.json"
+        },
+        {
+            "name": "localService/mockdata/AcreedoresSet.json"
+        },
+        {
+            "name": "localService/mockdata/MonedaSet.json"
+        },
+        {
+            "name": "localService/mockdata/CeBeSet.json"
+        },
+        {
+            "name": "localService/mockdata/BancosSet.json"
+        },
+        {
+            "name": "localService/mockdata/ViasDePagoSet.json"
+        },
+        {
+            "name": "localService/metadata-v1.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "controller/Detail.controller.js"
         },
         {
             "name": "controller/App.controller.js"
         },
         {
-            "name": "controller/Master.controller.js"
-        },
-        {
             "name": "controller/ListSelector.js"
-        },
-        {
-            "name": "controller/Detail.controller.js"
         },
         {
             "name": "controller/BaseController.js"
@@ -131,56 +70,14 @@
             "name": "controller/ErrorHandler.js"
         },
         {
-            "name": "Component-preload.js",
+            "name": "controller/LogApp.controller.js"
+        },
+        {
+            "name": "controller/Master.controller.js"
+        },
+        {
+            "name": "resources.json",
             "merged": true
-        },
-        {
-            "name": "localService/metadata.xml"
-        },
-        {
-            "name": "localService/mockserver.js"
-        },
-        {
-            "name": "localService/metadata-v1.xml"
-        },
-        {
-            "name": "localService/mockdata/DocheaderSet.json"
-        },
-        {
-            "name": "localService/mockdata/ViasDePagoSet.json"
-        },
-        {
-            "name": "localService/mockdata/DocitemsSet.json"
-        },
-        {
-            "name": "localService/mockdata/MonedaSet.json"
-        },
-        {
-            "name": "localService/mockdata/AcreedoresSet.json"
-        },
-        {
-            "name": "localService/mockdata/BancosSet.json"
-        },
-        {
-            "name": "localService/mockdata/PartidasSet.json"
-        },
-        {
-            "name": "localService/mockdata/SociedadSet.json"
-        },
-        {
-            "name": "localService/mockdata/ClaseDocSet.json"
-        },
-        {
-            "name": "localService/mockdata/IndImpSet.json"
-        },
-        {
-            "name": "localService/mockdata/TextCabSet.json"
-        },
-        {
-            "name": "localService/mockdata/CeCoSet.json"
-        },
-        {
-            "name": "localService/mockdata/CeBeSet.json"
         },
         {
             "name": "i18n/i18n.properties",
@@ -190,7 +87,107 @@
             "name": "Component.js"
         },
         {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/VendorData.json"
+        },
+        {
+            "name": "model/LogisticData.json"
+        },
+        {
+            "name": "model/SelectedData.json"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/HeaderData.json"
+        },
+        {
+            "name": "model/ControlData.json"
+        },
+        {
+            "name": "model/ItemsData.json"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
             "name": ".user.project.json"
+        },
+        {
+            "name": "view/DetailNoObjectsAvailable.view.xml"
+        },
+        {
+            "name": "view/DocHeader.fragment.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/ViewSettingsDialog.fragment.xml"
+        },
+        {
+            "name": "view/DocVendor.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpPrctr.fragment.xml"
+        },
+        {
+            "name": "view/LogApp.view.xml"
+        },
+        {
+            "name": "view/DocItems.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "view/DetailObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/Master.view.xml"
+        },
+        {
+            "name": "view/SortDocsLogistics.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpKostl.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpWaers.fragment.xml"
+        },
+        {
+            "name": "view/Partidas.fragment.xml"
+        },
+        {
+            "name": "view/TableSettings.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpSgtxt.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpAufnr.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpHktid.fragment.xml"
+        },
+        {
+            "name": "view/DocLogistic.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpSegment.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpHbkid.fragment.xml"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
         }
     ]
 }

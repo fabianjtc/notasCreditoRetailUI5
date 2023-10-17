@@ -1512,7 +1512,7 @@ sap.ui.define([
 			}
 			
 			if(sBldat !== sBudat){
-				return 'Fechas difetentes'
+				return 'Fechas diferentes'
 			}
 			
 			return "OK";
