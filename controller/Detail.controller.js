@@ -175,6 +175,7 @@ sap.ui.define([
 		},
 
 		onSelectionChange: function(oEvent) {
+			
 			var bSelected = oEvent.getParameter("selected");
 			var oItems = oEvent.getParameter("listItems");
 			var i = 0;
@@ -203,6 +204,9 @@ sap.ui.define([
 			oGridDoc.setVisible(false);
 			this._calcularTotales(); // Calcula totales	
 			// this._calcularTotalesLog(); // Calcula totales
+			
+			
+			
 		},
 
 		onSelectionChangeLog: function(oEvent) {
