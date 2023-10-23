@@ -508,11 +508,11 @@ sap.ui.define([
 			var oTable = this.getView().byId("lineItemsListLog").mAggregations.items;
 			var vCantSel = aSelectedData.length;
 
-			if (oTable.length === aLogisticData.length) {
+//			if (oTable.length === aLogisticData.length) {
 
-				debugger;
+//				debugger;
 
-				if (vCantSel === 1) {
+//				if (vCantSel === 1) {
 					for (var i = 0; i < aSelectedData.length; i++) {
 						newData.lifnr = aSelectedData[i].lifnr;
 						newData.bukrs = aSelectedData[i].bukrs;
@@ -561,12 +561,13 @@ sap.ui.define([
 						}
 					});
 
-				} else {
+/*				} else {
 					sap.m.MessageBox.success("Seleccionar solo una partida de acreedor");
 				}
 			} else {
 				sap.m.MessageBox.success("Seleccionar todas las posiciones logisticas");
-			}
+			} */
+			
 		},
 
 		//
