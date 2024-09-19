@@ -22,7 +22,9 @@ sap.ui.define([
 			 * @returns {sap.ui.model.Model} the model instance
 			 */
 			getModel : function (sName) {
-				return this.getView().getModel(sName);
+				if(navigator.onLine){
+					return this.getView().getModel(sName);	
+				}
 			},
 
 			/**

@@ -1,46 +1,80 @@
 {
     "resources": [
         {
-            "name": "view/DocHeader.fragment.xml"
+            "name": "neo-app.json"
         },
         {
-            "name": "view/NotFound.view.xml"
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
-            "name": "view/DocLogistic.fragment.xml"
+            "name": "localService/mockserver.js"
         },
         {
-            "name": "view/ViewSettingsDialog.fragment.xml"
+            "name": "localService/metadata-v1.xml"
         },
         {
-            "name": "view/DocVendor.fragment.xml"
+            "name": "localService/mockdata/ViasDePagoSet.json"
         },
         {
-            "name": "view/DetailObjectNotFound.view.xml"
+            "name": "localService/mockdata/AcreedoresSet.json"
         },
         {
-            "name": "view/LogApp.view.xml"
+            "name": "localService/mockdata/DocitemsSet.json"
+        },
+        {
+            "name": "localService/mockdata/PartidasSet.json"
+        },
+        {
+            "name": "localService/mockdata/SociedadSet.json"
+        },
+        {
+            "name": "localService/mockdata/CeBeSet.json"
+        },
+        {
+            "name": "localService/mockdata/IndImpSet.json"
+        },
+        {
+            "name": "localService/mockdata/DocheaderSet.json"
+        },
+        {
+            "name": "localService/mockdata/CeCoSet.json"
+        },
+        {
+            "name": "localService/mockdata/MonedaSet.json"
+        },
+        {
+            "name": "localService/mockdata/BancosSet.json"
+        },
+        {
+            "name": "localService/mockdata/TextCabSet.json"
+        },
+        {
+            "name": "localService/mockdata/ClaseDocSet.json"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": ".project.json"
         },
         {
             "name": "view/ValueHelpSegment.fragment.xml"
         },
         {
-            "name": "view/ValueHelpPrctr.fragment.xml"
+            "name": "view/ViewSettingsDialog.fragment.xml"
         },
         {
-            "name": "view/App.view.xml"
-        },
-        {
-            "name": "view/DocItems.fragment.xml"
-        },
-        {
-            "name": "view/Master.view.xml"
-        },
-        {
-            "name": "view/Detail.view.xml"
-        },
-        {
-            "name": "view/DetailNoObjectsAvailable.view.xml"
+            "name": "view/DetailObjectNotFound.view.xml"
         },
         {
             "name": "view/ValueHelpSgtxt.fragment.xml"
@@ -49,44 +83,75 @@
             "name": "view/ValueHelpWaers.fragment.xml"
         },
         {
+            "name": "view/DocLogistic.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/LogApp.view.xml"
+        },
+        {
             "name": "view/TableSettings.fragment.xml"
+        },
+        {
+            "name": "view/DetailNoObjectsAvailable.view.xml"
+        },
+        {
+            "name": "view/DocHeader.fragment.xml"
+        },
+        {
+            "name": "view/ValueHelpPrctr.fragment.xml"
         },
         {
             "name": "view/Partidas.fragment.xml"
         },
         {
-            "name": "view/ValueHelpAufnr.fragment.xml"
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/DocItems.fragment.xml"
         },
         {
             "name": "view/ValueHelpKostl.fragment.xml"
         },
         {
-            "name": "view/SortDocsLogistics.fragment.xml"
+            "name": "view/Master.view.xml"
         },
         {
             "name": "view/ValueHelpHbkid.fragment.xml"
         },
         {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "view/DocVendor.fragment.xml"
+        },
+        {
             "name": "view/ValueHelpHktid.fragment.xml"
         },
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
+            "name": "view/SortDocsLogistics.fragment.xml"
         },
         {
-            "name": "model/formatter.js"
+            "name": "view/ValueHelpAufnr.fragment.xml"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "model/HeaderData.json"
         },
         {
             "name": "model/ControlData.json"
         },
         {
             "name": "model/models.js"
-        },
-        {
-            "name": "model/LogisticData.json"
-        },
-        {
-            "name": "model/HeaderData.json"
         },
         {
             "name": "model/SelectedData.json"
@@ -98,7 +163,13 @@
             "name": "model/VendorData.json"
         },
         {
-            "name": ".user.project.json"
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/LogisticData.json"
+        },
+        {
+            "name": "controller/Master.controller.js"
         },
         {
             "name": "controller/LogApp.controller.js"
@@ -107,7 +178,7 @@
             "name": "controller/ErrorHandler.js"
         },
         {
-            "name": "controller/Detail.controller.js"
+            "name": "controller/BaseController.js"
         },
         {
             "name": "controller/ListSelector.js"
@@ -116,78 +187,7 @@
             "name": "controller/App.controller.js"
         },
         {
-            "name": "controller/Master.controller.js"
-        },
-        {
-            "name": "controller/BaseController.js"
-        },
-        {
-            "name": "neo-app.json"
-        },
-        {
-            "name": "manifest.json"
-        },
-        {
-            "name": "Component.js"
-        },
-        {
-            "name": "Component-preload.js",
-            "merged": true
-        },
-        {
-            "name": ".project.json"
-        },
-        {
-            "name": "localService/metadata-v1.xml"
-        },
-        {
-            "name": "localService/mockdata/CeCoSet.json"
-        },
-        {
-            "name": "localService/mockdata/AcreedoresSet.json"
-        },
-        {
-            "name": "localService/mockdata/CeBeSet.json"
-        },
-        {
-            "name": "localService/mockdata/ViasDePagoSet.json"
-        },
-        {
-            "name": "localService/mockdata/ClaseDocSet.json"
-        },
-        {
-            "name": "localService/mockdata/DocheaderSet.json"
-        },
-        {
-            "name": "localService/mockdata/IndImpSet.json"
-        },
-        {
-            "name": "localService/mockdata/SociedadSet.json"
-        },
-        {
-            "name": "localService/mockdata/TextCabSet.json"
-        },
-        {
-            "name": "localService/mockdata/MonedaSet.json"
-        },
-        {
-            "name": "localService/mockdata/DocitemsSet.json"
-        },
-        {
-            "name": "localService/mockdata/BancosSet.json"
-        },
-        {
-            "name": "localService/mockdata/PartidasSet.json"
-        },
-        {
-            "name": "localService/mockserver.js"
-        },
-        {
-            "name": "localService/metadata.xml"
-        },
-        {
-            "name": "resources.json",
-            "merged": true
+            "name": "controller/Detail.controller.js"
         }
     ]
 }
